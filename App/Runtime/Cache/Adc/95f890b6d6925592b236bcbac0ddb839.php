@@ -1,5 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
 
@@ -20,12 +20,16 @@
     <!-- Custom CSS -->
     <link href="/Public/adc/dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Morris Charts CSS -->
+    <link href="/Public/adc/vendor/morrisjs/morris.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="/Public/adc/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- layer -->
+    <!-- jQuery -->
     <script src="/Public/adc/vendor/jquery/jquery.min.js"></script>
     <script src="/Public/layer/layer.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,7 +38,6 @@
     <![endif]-->
 
 </head>
-
 
 <body>
 

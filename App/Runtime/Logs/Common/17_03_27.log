@@ -1144,3 +1144,447 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 ERR: 无法加载模块:Public
 
+[ 2017-03-27T16:15:36+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:15:44+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:09+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:11+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:17+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:27+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:36+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:46+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:55+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:16:57+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:17:10+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:17:20+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:19:08+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:19:21+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:19:22+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:19:31+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:20:16+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:20:53+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:20:56+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/jquery/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/bootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/raphael/raphael.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/metisMenu/metisMenu.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/jquery/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/morrisjs/morris.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /data/morris-data.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Data
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /dist/js/sb-admin-2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Dist
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/bootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/metisMenu/metisMenu.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/raphael/raphael.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /vendor/morrisjs/morris.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /data/morris-data.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Data
+
+[ 2017-03-27T16:21:47+08:00 ] 127.0.0.1 /dist/js/sb-admin-2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Dist
+
+[ 2017-03-27T16:22:06+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:22:31+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/jquery/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/raphael/raphael.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/morrisjs/morris.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /data/morris-data.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Data
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/bootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/metisMenu/metisMenu.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /dist/js/sb-admin-2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Dist
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/raphael/raphael.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /vendor/morrisjs/morris.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Vendor
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /data/morris-data.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Data
+
+[ 2017-03-27T16:22:45+08:00 ] 127.0.0.1 /dist/js/sb-admin-2.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Dist
+
+[ 2017-03-27T16:25:22+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:25:29+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:25:31+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:25:57+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:26:27+08:00 ] 127.0.0.1 /Public/js/layer/layer.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:26:27+08:00 ] 127.0.0.1 /Public/js/layer/layer.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:26:27+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:26:49+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:26:54+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:27:56+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:01+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:03+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:08+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:12+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:14+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:28:17+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:29:20+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:29:45+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:10+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:22+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:25+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:25+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:26+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:26+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:26+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-27T16:30:46+08:00 ] 127.0.0.1 /Public/adc/vendor/bootstrap/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
