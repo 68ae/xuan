@@ -37,43 +37,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href=""><i class="fa fa-dashboard fa-fw"></i> 首页</a>
-                        </li>
-
-                        <li>
-                            <a href=""><i class="fa fa-table fa-fw"></i> 类别管理</a>
-                        </li>
-
-                        <!-- <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
+            <include file='./App/Adc/View/left.html'/>
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -181,19 +145,16 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="/Public/vendor/jquery/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
-    <script src="/Public/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/adc/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="/Public/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="/Public/adc/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="/Public/vendor/raphael/raphael.min.js"></script>
-    <script src="/Public/vendor/morrisjs/morris.min.js"></script>
-    <script src="/Public/data/morris-data.js"></script>
+    <script src="/Public/adc/vendor/raphael/raphael.min.js"></script>
+    <script src="/Public/adc/vendor/morrisjs/morris.min.js"></script>
+    <script src="/Public/adc/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="/Public/dist/js/sb-admin-2.js"></script>

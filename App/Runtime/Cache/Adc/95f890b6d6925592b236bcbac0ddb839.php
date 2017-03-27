@@ -12,17 +12,20 @@
     <title>后台管理1.1.1</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/Public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/adc/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/Public/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/Public/adc/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/Public/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Public/adc/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/Public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Public/adc/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- layer -->
+    <script src="/Public/adc/vendor/jquery/jquery.min.js"></script>
+    <script src="/Public/layer/layer.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,35 +46,62 @@
                         <h3 class="panel-title">请登录</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <a href="/adc" class="btn btn-lg btn-success btn-block">登录</a>
-                            </fieldset>
-                        </form>
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="用户名" id="username" name="username" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="密码" id="password" name="password" type="password" value="">
+                            </div>
+                            <input type="submit" class="btn btn-lg btn-success btn-block" onclick="verification()" value="登录">
+                        </fieldset>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="/Public/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        function verification()
+        {
+            var username = $('#username').val();
+            var password = $('#password').val();
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/Public/vendor/bootstrap/js/bootstrap.min.js"></script>
+            if('' == username)
+            {
+                layer.alert("请输入用户名!");
+                return false;
+            }
+            else if('' == password)
+            {
+                layer.alert("请输入密码!");
+                return false;
+            }
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/Public/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/Public/dist/js/sb-admin-2.js"></script>
-
+            var param = {username:username, password:password};
+            $.ajax({
+                type:'POST',
+                url:'/adc/login/checkLogin',
+                data:param,
+                dataType:'json',
+                success:function(data){
+                    if (data.status == 'failed')
+                    {
+                        //登录失败
+                        $("#username").css("border-bottom","2px solid #f0868a");
+                        $("#password").css("border-bottom","2px solid #f0868a");
+                        layer.alert(data.reason);
+                        return false;
+                    }
+                    else
+                    {
+                        //成功
+                        window.location.href='/adc/index/index';
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
