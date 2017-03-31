@@ -19,13 +19,15 @@ class NewsController extends BaseController {
                     ->join('LEFT JOIN __USER__ b ON a.author = b.uid')
                     ->join('LEFT JOIN __SORT__ c ON a.sortid = c.sid')
                     ->select();
-        echo json_encode(array('data' => $userInfo));
+        $this->ajaxReturn(array('data' => $userInfo));
     }
 
     /*
         新建文章
     */
     public function add(){
+        $sorts = M('Sort')->select();
+        $this->assign('sorts', $sorts);
         $this->display('add');
     }
 }

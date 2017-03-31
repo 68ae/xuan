@@ -13,42 +13,100 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="panel panel-green">
+                <div class="col-lg-7">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             新增文章
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
+                        <form class="panel-body" onclick="return false;">
                             <div role="form" class="col-lg-12">
                                 <div class="form-group">
                                     <label>标题</label>
-                                    <input class="form-control" placeholder="请输入标题">
+                                    <input class="form-control" placeholder="请输入标题" id="title" required="required">
                                 </div>
                             </div>
                             <div role="form" class="col-lg-12">
                                 <div class="form-group">
                                     <label>内容</label>
-                                    <script id="container" name="content" type="text/plain"></script>
+                                    <script id="content" name="content" type="text/plain"></script>
                                 </div>
                             </div>
-                            <div role="form" class="col-lg-12">
+                            <div role="form" class="col-lg-4">
                                 <div class="form-group">
-                                    <label>标题</label>
-                                    <input class="form-control" placeholder="请输入标题">
+                                    <label>标签</label>
+                                    <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag">
                                 </div>
                             </div>
-                            <div role="form" class="col-lg-12">
+                            <div role="form" class="col-lg-4">
                                 <div class="form-group">
-                                    <label>标题</label>
-                                    <input class="form-control" placeholder="请输入标题">
+                                    <label>分类</label>
+                                    <select class="form-control" id="sort">
+                                        <option value="-1">请选择</option>
+                                        <foreach name="sorts" item="sort">
+                                            <if condition="$sort.pid eq 0">
+                                                <option value="{$sort.sid}">{$sort.sortname}</option>
+                                                <foreach name="sorts" item="tt">
+                                                    <if condition="$sort['sid'] eq $tt['pid']">
+                                                        <option value="{$tt.sid}">&nbsp;&nbsp;&nbsp;&nbsp;{$tt.sortname}</option>
+                                                    </if>
+                                                </foreach>
+                                            </if>
+                                        </foreach>
+                                    </select>
                                 </div>
                             </div>
-                            <div role="form" class="col-lg-12">
-                                <button type="submit" class="btn btn-outline btn-primary">提交</button>
-                                <button type="reset" class="btn btn-outline btn-default">取消</button>
+                            <div role="form" class="col-lg-4">
+                                <div class="form-group">
+                                    <label>发布时间</label>
+                                    <input class="form-control" id="date" value="{:date('Y-m-d H:i:s')}">
+                                </div>
                             </div>
-                        </div>
+
+                            <div role="form" class="col-lg-12">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">高级选项</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <div role="form" class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label>文章摘要</label>
+                                                    <textarea class="form-control" rows="3" id="excerpt"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div role="form" class="col-lg-4">
+                                                <div class="form-group">
+                                                    <input class="form-control" id="password" placeholder="文章访问密码:不设置,请留空.">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="y" id="top">文章置顶
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="y" id="sortop">分类置顶
+                                                    </label>
+                                                    <label class="checkbox-inline" value="y">
+                                                        <input type="checkbox" value="y" id="allow_remark" checked="checked">允许评论
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="form" class="col-lg-12">
+                                <button type="submit" class="btn btn-outline btn-primary" onclick="saveAdd()">提交</button>
+                                <button type="reset" class="btn btn-outline btn-default" onclick="javascript:history.go(-1);">取消</button>
+                            </div>
+                        </form>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -66,16 +124,32 @@
     <!-- Custom Theme JavaScript -->
     <script src="/Public/adc/dist/js/sb-admin-2.js"></script>
     <!-- DataTables JavaScript -->
-
     <!-- 配置文件 -->
     <script type="text/javascript" src="/Public/adc/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="/Public/adc/ueditor/ueditor.all.js"></script>
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
-        var ue = UE.getEditor('container',{
-            autoHeight: false
+        var ue = UE.getEditor('content',{
+            initialFrameHeight: 260
         });
+    </script>
+    <script type="text/javascript">
+    function saveAdd()
+    {
+        var title = $('#title').val();
+        var content = ue.getContent();
+        var tag = $('#tag').val();
+        var sort = $('#sort').val();
+        var date = $('#date').val();
+        var excerpt = $('#excerpt').val();
+        var password = $('#password').val();
+        var top = $('#top').is(":checked") ? 'y':'';
+        var sortop = $('#sortop').is(":checked") ? 'y':'';
+        var allow_remark = $('#allow_remark').is(":checked") ? 'y':'';
+        var params = {title:title, content:content, tag:tag, sort:sort, date:date, excerpt:excerpt, password:password, top:top, sortop:sortop, allow_remark:allow_remark};
+        console.log(params);
+    }
     </script>
 </body>
 
