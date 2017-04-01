@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>后台管理1.1.1</title>
+  <title>( ͡° ͜ʖ ͡°)╯后台管理1.1.1</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -217,7 +217,7 @@
 <!-- FastClick -->
 <script src="/public/adc/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<!-- <script src="/public/adc/dist/js/app.min.js"></script> -->
+<script src="/public/adc/dist/js/app.min.js"></script>
 <!-- Sparkline -->
 <!-- <script src="/public/adc/plugins/sparkline/jquery.sparkline.min.js"></script> -->
 <!-- jvectormap -->
