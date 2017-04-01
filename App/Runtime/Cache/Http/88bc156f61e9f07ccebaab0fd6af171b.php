@@ -1,6 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
+    <link href="/favicon.ico" rel="shortcut icon">
     <title>程选网，首页</title>
     <style>
         html, body {
@@ -42,7 +43,8 @@
 </body>
 <script type="text/javascript">
     window.onblur = function() {
-        document.title = "发呆- ( ゜- ゜)つロ ";
+        // 发呆- ( ゜- ゜)つロ 
+        document.title = "你瞅啥？( ͡° ͜ʖ ͡°)╯";
     window.onfocus = function() {
         document.title = "程选网，首页";
      }

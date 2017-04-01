@@ -13,13 +13,14 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="/public/adc/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/public/adc/dist/css/skins/_all-skins.min.css">
-
+  <!-- ico -->
+  <link href="/favicon.ico" rel="shortcut icon">
   <!-- jQuery 2.2.3 -->
   <script src="/public/adc/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,33 +30,51 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="/"><b>Cheng</b>X</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">登录开始会话</p>
 
-<body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">请登录</h3>
-                    </div>
-                    <div class="panel-body">
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="用户名" id="username" name="username" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="密码" id="password" name="password" type="password" value="">
-                            </div>
-                            <input type="submit" class="btn btn-lg btn-success btn-block" onclick="verification()" value="登录">
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
+    <!-- <form method="post"> -->
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" id="username" placeholder="用户名" autofocus required oninput="Monitor()" onpropertychange="Monitor()">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" id="password" placeholder="密码" oninput="Monitor()" onpropertychange="Monitor()">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="verification()">登录</button>
         </div>
-    </div>
+        <!-- /.col -->
+      </div>
+    <!-- </form> -->
+    <!-- /.social-auth-links -->
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<script src="/public/layer/layer.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+
+        // 判断鼠标去掉警示效果
+        function Monitor()
+        {
+            $("#username").css("border-bottom","");
+            $("#password").css("border-bottom","");
+        }
+        // 验证
         function verification()
         {
             var username = $('#username').val();
@@ -64,11 +83,13 @@
             if('' == username)
             {
                 layer.alert("请输入用户名!");
+                $("#username").css("border-bottom","2px solid #f0868a");
                 return false;
             }
             else if('' == password)
             {
                 layer.alert("请输入密码!");
+                $("#password").css("border-bottom","2px solid #f0868a");
                 return false;
             }
 
@@ -97,5 +118,4 @@
         }
     </script>
 </body>
-
 </html>
