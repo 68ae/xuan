@@ -1,3 +1,52 @@
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="/adc" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>W</b>CX</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Cheng</b>X</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">切换导航</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/public/adc/dist/img/user.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{$Think.session.userInfo.nickname}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/public/adc/dist/img/user.jpg" class="img-circle" alt="User Image">
+                <p>
+                  {$Think.session.userInfo.nickname} - 管理员
+                  <small>注册时间{$Think.session.userInfo.created_time}</small>
+                </p>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">设置</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/adc/login" class="btn btn-default btn-flat">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -29,11 +78,25 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adc/news/add"><i class="fa fa-circle-o"></i> 新增文章</a></li>
-            <li><a href="/adc/news/list"><i class="fa fa-circle-o"></i> 文章列表</a></li>
+            <li><a href="/adc/news/newsadd"><i class="fa fa-circle-o"></i> 新增文章</a></li>
+            <li><a href="/adc/news/newslist"><i class="fa fa-circle-o"></i> 文章列表</a></li>
           </ul>
         </li>
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
+  <script type="text/javascript">
+    $(function (){
+      var curr_url = '{$Think.ACTION_NAME}';  //获取当前URL
+      $('.sidebar-menu a').each(function(i,n){  //循环导航的a标签
+          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接
+          if(href == curr_url){  //如果当前URL,和a标签中的href相等。
+              $(this).parent('li').addClass('active');  //那么就给这个li标签增加active类。
+              $(this).parent('li').siblings().removeClass('active');  //那么就给其他li标签增加active类。
+              $(this).parent().parent().parent('li').addClass('active');  //二级列表中大类的状态
+              $(this).parent().parent().parent('li').siblings().removeClass('active');  //二级列表中其他大类的状态
+          }
+      });
+    });
+  </script>

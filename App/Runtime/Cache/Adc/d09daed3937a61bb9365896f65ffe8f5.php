@@ -13,7 +13,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- jvectormap -->
-  <!-- <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
+  <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/public/adc/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -32,8 +32,8 @@
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
-
-  <header class="main-header">
+  <!-- Left side column. contains the logo and sidebar -->
+    <header class="main-header">
 
     <!-- Logo -->
     <a href="/adc" class="logo">
@@ -56,15 +56,15 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/public/adc/dist/img/user.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">wcx</span>
+              <span class="hidden-xs"><?php echo ($_SESSION['userInfo']['nickname']); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="/public/adc/dist/img/user.jpg" class="img-circle" alt="User Image">
                 <p>
-                  ChengX - 管理员
-                  <small>会员自2012年11月</small>
+                  <?php echo ($_SESSION['userInfo']['nickname']); ?> - 管理员
+                  <small>注册时间<?php echo ($_SESSION['userInfo']['created_time']); ?></small>
                 </p>
               </li>
               <li class="user-footer">
@@ -82,8 +82,7 @@
 
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
+  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- search form -->
@@ -114,14 +113,28 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adc/news/add"><i class="fa fa-circle-o"></i> 新增文章</a></li>
-            <li><a href="/adc/news/list"><i class="fa fa-circle-o"></i> 文章列表</a></li>
+            <li><a href="/adc/news/newsadd"><i class="fa fa-circle-o"></i> 新增文章</a></li>
+            <li><a href="/adc/news/newslist"><i class="fa fa-circle-o"></i> 文章列表</a></li>
           </ul>
         </li>
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
+  <script type="text/javascript">
+    $(function (){
+      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL
+      $('.sidebar-menu a').each(function(i,n){  //循环导航的a标签
+          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接
+          if(href == curr_url){  //如果当前URL,和a标签中的href相等。
+              $(this).parent('li').addClass('active');  //那么就给这个li标签增加active类。
+              $(this).parent('li').siblings().removeClass('active');  //那么就给其他li标签增加active类。
+              $(this).parent().parent().parent('li').addClass('active');  //二级列表中大类的状态
+              $(this).parent().parent().parent('li').siblings().removeClass('active');  //二级列表中其他大类的状态
+          }
+      });
+    });
+  </script>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -199,12 +212,13 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>版本</b> 1.1.1
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http:chengxuan.wang">ChengX</a>.</strong> All rights
-    reserved.
-  </footer>
+  <div class="pull-right hidden-xs">
+    <b>版本</b> 1.1.1
+  </div>
+  <strong>Copyright &copy; 2014-2016 <a href="http:chengxuan.wang">ChengX</a>.</strong> All rights
+  reserved.
+</footer>
+
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->

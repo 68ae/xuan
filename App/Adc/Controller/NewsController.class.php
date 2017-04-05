@@ -5,7 +5,7 @@ class NewsController extends BaseController {
     /*
         文章列表
     */
-    public function list(){
+    public function newsList(){
         $this->display('list');
     }
 
@@ -25,7 +25,7 @@ class NewsController extends BaseController {
     /*
         新建文章
     */
-    public function add(){
+    public function newsAdd(){
         $sorts = M('Sort')->select();
         $this->assign('sorts', $sorts);
         $this->display('add');

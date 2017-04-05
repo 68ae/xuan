@@ -37,6 +37,12 @@ return  array(
     'COOKIE_SECURE'         =>  false,   // Cookie安全传输
     'COOKIE_HTTPONLY'       =>  '',      // Cookie httponly设置
 
+    /* TOKEN配置 */
+    'TOKEN_ON'      =>    true,  // 是否开启令牌验证 默认关闭
+    'TOKEN_NAME'    =>    '__hash__',    // 令牌验证的表单隐藏字段名称，默认为__hash__
+    'TOKEN_TYPE'    =>    'md5',  //令牌哈希验证规则 默认为MD5
+    'TOKEN_RESET'   =>    true,  //令牌验证出错后是否重置令牌 默认为true
+
     /* 默认设定 */
     'DEFAULT_M_LAYER'       =>  'Model', // 默认的模型层名称
     'DEFAULT_C_LAYER'       =>  'Controller', // 默认的控制器层名称
