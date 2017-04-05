@@ -154,7 +154,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form class="panel-body" onclick="return false;">
+                <form class="panel-body">
                             <div role="form" class="col-lg-12">
                                 <div class="form-group">
                                     <label>标题</label>
