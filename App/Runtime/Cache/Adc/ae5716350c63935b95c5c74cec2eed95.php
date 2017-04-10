@@ -281,5 +281,22 @@
         initialFrameHeight: 260
     });
 </script>
+<script type="text/javascript">
+    function saveAdd()
+    {
+        var title = $('#title').val();
+        var content = ue.getContent();
+        var tag = $('#tag').val();
+        var sort = $('#sort').val();
+        var date = $('#date').val();
+        var excerpt = $('#excerpt').val();
+        var password = $('#password').val();
+        var top = $('#top').is(":checked") ? 'y':'';
+        var sortop = $('#sortop').is(":checked") ? 'y':'';
+        var allow_remark = $('#allow_remark').is(":checked") ? 'y':'';
+        var params = {title:title, content:content, tag:tag, sort:sort, date:date, excerpt:excerpt, password:password, top:top, sortop:sortop, allow_remark:allow_remark};
+        console.log(params);
+    }
+    </script>
 </body>
 </html>

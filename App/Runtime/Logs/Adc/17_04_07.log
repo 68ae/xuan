@@ -1,0 +1,222 @@
+[ 2017-04-07T08:32:38+08:00 ] 10.10.0.48 /adc/news/getNewsList?_=1491525140312
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.130801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.095005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.095005s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+
+[ 2017-04-07T08:41:37+08:00 ] 10.10.0.48 /adc/news/newslist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+
+[ 2017-04-07T08:41:41+08:00 ] 10.10.0.48 /index.php/adc/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:2.314132s ]
+INFO: [ view_parse ] --END-- [ RunTime:2.314132s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.023001s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.876050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.899051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.128008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.128008s ]
+
+[ 2017-04-07T08:41:55+08:00 ] 10.10.0.48 /adc/login/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_user` [ RunTime:0.0312s ]
+SQL: SELECT * FROM `emlog_user` WHERE ( username ='aaa' ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant username - assumed 'username' E:\www\xuan\App\Adc\Controller\LoginController.class.php 第 28 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\www\xuan\App\Adc\Controller\LoginController.class.php 第 29 行.
+
+[ 2017-04-07T08:41:55+08:00 ] 10.10.0.48 /adc/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098204s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-04-07T08:41:59+08:00 ] 10.10.0.48 /adc/news/newslist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.133607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-04-07T08:41:59+08:00 ] 10.10.0.48 /adc/news/getNewsList?_=1491525719229
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_blog` [ RunTime:0.0080s ]
+SQL: SELECT a.gid,a.title,FROM_UNIXTIME(a.date,"%Y-%m-%d %H:%i:%S") as date,a.type,a.comnum,a.views,b.nickname,c.sortname FROM emlog_blog a LEFT JOIN emlog_user b ON a.author = b.uid LEFT JOIN emlog_sort c ON a.sortid = c.sid   [ RunTime:0.0376s ]
+
+[ 2017-04-07T09:04:52+08:00 ] 10.10.0.48 /adc/news/newsadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_sort` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `emlog_sort`  [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-04-07T09:04:53+08:00 ] 10.10.0.48 /adc/news/newslist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-04-07T09:04:53+08:00 ] 10.10.0.48 /adc/news/getNewsList?_=1491527093688
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_blog` [ RunTime:0.0100s ]
+SQL: SELECT a.gid,a.title,FROM_UNIXTIME(a.date,"%Y-%m-%d %H:%i:%S") as date,a.type,a.comnum,a.views,b.nickname,c.sortname FROM emlog_blog a LEFT JOIN emlog_user b ON a.author = b.uid LEFT JOIN emlog_sort c ON a.sortid = c.sid   [ RunTime:0.0440s ]
+
+[ 2017-04-07T16:17:06+08:00 ] 10.10.0.48 /adc/news/newsadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_sort` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `emlog_sort`  [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-04-07T16:17:08+08:00 ] 10.10.0.48 /adc/news/newslist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-04-07T16:17:08+08:00 ] 10.10.0.48 /adc/news/getNewsList?_=1491553028816
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_blog` [ RunTime:0.0080s ]
+SQL: SELECT a.gid,a.title,FROM_UNIXTIME(a.date,"%Y-%m-%d %H:%i:%S") as date,a.type,a.comnum,a.views,b.nickname,c.sortname FROM emlog_blog a LEFT JOIN emlog_user b ON a.author = b.uid LEFT JOIN emlog_sort c ON a.sortid = c.sid   [ RunTime:0.0410s ]
+
