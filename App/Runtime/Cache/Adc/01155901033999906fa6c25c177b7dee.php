@@ -135,15 +135,15 @@
       });
     });
   </script>
-
+<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
-    <section class="content-header">
+    <!-- <section class="content-header">
       <h1>
         文章管理
       </h1>
-    </section>
+    </section> -->
     <!-- /.content -->
     <section class="content">
       <div class="row">
@@ -180,7 +180,7 @@
   <div class="pull-right hidden-xs">
     <b>版本</b> 1.1.1
   </div>
-  <strong>Copyright &copy; 2014-2016 <a href="http:chengxuan.wang">ChengX</a>.</strong> All rights
+  <strong>Copyright &copy; 2014-2016 <a href="http://chengxuan.wang">ChengX</a>.</strong> All rights
   reserved.
 </footer>
 
@@ -204,14 +204,18 @@
 <script type="text/javascript">
   $(function () {
     var dataTables_news = $('#example2').DataTable({
-        "sAjaxSource":'/adc/news/getNewsList',
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "aoColumns": [
+        language: {
+            url: '/public/adc/plugins/datatables/Chinese.json'
+        },
+        serverSide: true, // 是否开启服务器模式
+        sAjaxSource:'/adc/news/getNewsList',
+        paging: true,  //是否开启本地分页
+        lengthChange: true, // 是否允许用户改变表格每页显示的记录数
+        searching: true, //是否允许Datatables开启本地搜索
+        info: true, // 控制是否显示表格左下角的信息
+        order:[3], //默认排序
+
+        aoColumns: [
             { "mData": "title" },
             { "mData": "sortname" },
             { "mData": "nickname" },
@@ -223,7 +227,7 @@
             {
                 "aTargets": [6],
                 "mRender": function (data,type,full) {
-                    return '<i class="fa fa-edit btn" ></i><i class="fa fa-trash-o btn" onclick="deviceApproval(' + full.gid + ')"></i>';
+                    return '<i class="fa fa-edit btn"  onclick="edit(' + full.gid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.gid + ')"></i>';
                 },
                 "orderable":false
             }

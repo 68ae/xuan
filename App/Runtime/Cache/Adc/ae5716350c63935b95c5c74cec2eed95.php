@@ -154,94 +154,94 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form class="panel-body">
-                            <div role="form" class="col-lg-12">
-                                <div class="form-group">
-                                    <label>标题</label>
-                                    <input class="form-control" placeholder="请输入标题" id="title" required="required">
-                                </div>
-                            </div>
-                            <div role="form" class="col-lg-12">
-                                <div class="form-group">
-                                    <label>内容</label>
-                                    <script id="content" name="content" type="text/plain"></script>
-                                </div>
-                            </div>
-                            <div role="form" class="col-lg-4">
-                                <div class="form-group">
-                                    <label>标签</label>
-                                    <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag">
-                                </div>
-                            </div>
-                            <div role="form" class="col-lg-4">
-                                <div class="form-group">
-                                    <label>分类</label>
-                                    <select class="form-control" id="sort">
-                                        <option value="-1">请选择</option>
-                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>"><?php echo ($sort["sortname"]); ?></option>
-                                                <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div role="form" class="col-lg-4">
-                                <div class="form-group">
-                                    <label>发布时间</label>
-                                    <input class="form-control" id="date" value="<?php echo date('Y-m-d H:i:s');?>">
-                                </div>
-                            </div>
+                <form class="panel-body" id="form_add_news" name="form_add_news" method="POST" enctype="multipart/form-data">
+                    <div role="form" class="col-lg-12">
+                        <div class="form-group">
+                            <label>标题</label>
+                            <input class="form-control" placeholder="请输入标题" id="title" name="title">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-12">
+                        <div class="form-group">
+                            <label>内容</label>
+                            <script id="content" name="content" type="text/plain"></script>
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-4">
+                        <div class="form-group">
+                            <label>标签</label>
+                            <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag" name="tag">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-4">
+                        <div class="form-group">
+                            <label>分类</label>
+                            <select class="form-control" id="sort" name="sort">
+                                <option value="">请选择</option>
+                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>"><?php echo ($sort["sortname"]); ?></option>
+                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-4">
+                        <div class="form-group">
+                            <label>发布时间</label>
+                            <input class="form-control" id="date" name="date" value="<?php echo date('Y-m-d H:i:s');?>">
+                        </div>
+                    </div>
 
-                            <div role="form" class="col-lg-12">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">高级选项</a>
-                                        </h4>
+                    <div role="form" class="col-lg-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">高级选项</a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                    <div role="form" class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>文章摘要</label>
+                                            <textarea class="form-control" rows="3" id="excerpt" name="excerpt"></textarea>
+                                        </div>
                                     </div>
-                                    <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                        <div class="panel-body">
-                                            <div role="form" class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label>文章摘要</label>
-                                                    <textarea class="form-control" rows="3" id="excerpt"></textarea>
-                                                </div>
-                                            </div>
 
-                                            <div role="form" class="col-lg-4">
-                                                <div class="form-group">
-                                                    <input class="form-control" id="password" placeholder="文章访问密码:不设置,请留空.">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="checkbox">
-                                                  <label>
-                                                    <input type="checkbox" value="y" id="top">文章置顶
-                                                  </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="checkbox">
-                                                  <label>
-                                                    <input type="checkbox" value="y" id="sortop">分类置顶
-                                                  </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="checkbox">
-                                                  <label>
-                                                    <input type="checkbox" value="y" id="allow_remark" checked>允许评论
-                                                  </label>
-                                                </div>
-                                            </div>
+                                    <div role="form" class="col-lg-4">
+                                        <div class="form-group">
+                                            <input class="form-control" id="password" name="password" placeholder="文章访问密码:不设置,请留空.">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="checkbox">
+                                          <label>
+                                            <input type="checkbox" value="y" id="top" name="top">文章置顶
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="checkbox">
+                                          <label>
+                                            <input type="checkbox" value="y" id="sortop" name="sortop">分类置顶
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="checkbox">
+                                          <label>
+                                            <input type="checkbox" value="y" id="allow_remark" name="allow_remark" checked>允许评论
+                                          </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {__TOKEN__}
-                            <div role="form" class="col-lg-12">
-                                <button type="submit" class="btn btn-primary" onclick="saveAdd()">提交</button>
-                                <button type="reset" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
-                            </div>
-                        </form>
+                        </div>
+                    </div>
+                    {__TOKEN__}
+                    <div role="form" class="col-lg-12">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                        <button type="reset" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
@@ -253,7 +253,7 @@
   <div class="pull-right hidden-xs">
     <b>版本</b> 1.1.1
   </div>
-  <strong>Copyright &copy; 2014-2016 <a href="http:chengxuan.wang">ChengX</a>.</strong> All rights
+  <strong>Copyright &copy; 2014-2016 <a href="http://chengxuan.wang">ChengX</a>.</strong> All rights
   reserved.
 </footer>
 
@@ -271,10 +271,13 @@
 <script src="/public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-
+<!-- 验证 -->
+<script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="/Public/adc/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="/Public/adc/ueditor/ueditor.all.js"></script>
+<script src="/public/layer/layer.js"></script>
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
     var ue = UE.getEditor('content',{
@@ -282,21 +285,68 @@
     });
 </script>
 <script type="text/javascript">
-    function saveAdd()
-    {
-        var title = $('#title').val();
-        var content = ue.getContent();
-        var tag = $('#tag').val();
-        var sort = $('#sort').val();
-        var date = $('#date').val();
-        var excerpt = $('#excerpt').val();
-        var password = $('#password').val();
-        var top = $('#top').is(":checked") ? 'y':'';
-        var sortop = $('#sortop').is(":checked") ? 'y':'';
-        var allow_remark = $('#allow_remark').is(":checked") ? 'y':'';
-        var params = {title:title, content:content, tag:tag, sort:sort, date:date, excerpt:excerpt, password:password, top:top, sortop:sortop, allow_remark:allow_remark};
-        console.log(params);
-    }
+    //验证
+    $().ready(function() {
+        $("#form_add_news").validate({
+            rules: {
+                title: {
+                    required: true
+                },
+                content: {
+                    required: true
+                },
+                sort: {
+                    required: true
+                },
+                date: {
+                    required: true
+                }
+            },
+            //通过之后回调
+            submitHandler: function(form) {
+                var param = $("#form_add_news").serialize();
+                $.ajax({
+                    url : "/adc/news/newsAddSave",
+                    type : "post",
+                    dataType : "json",
+                    data: param,
+                    success : function(data) {
+                        if(data.result == 'success') {
+                            location.href='/adc/news/newsList';
+                        }
+                        else {
+                            layer.msg(data.msg);
+                        }
+                    }
+                });
+            },
+            //不通过回调
+            invalidHandler: function(form, validator) {
+                return false;
+            }
+        });
+    });
+    //验证结束
+    // function saveAdd()
+    // {
+    //     var param = $("#form_add_news").serialize();
+    //     console.log(param);
+    //     var title = $('#title').val();
+    //     var content = ue.getContent();
+    //     var tag = $('#tag').val();
+    //     var sort = $('#sort').val();
+    //     var date = $('#date').val();
+    //     var excerpt = $('#excerpt').val();
+    //     var password = $('#password').val();
+    //     var top = $('#top').is(":checked") ? 'y':'';
+    //     var sortop = $('#sortop').is(":checked") ? 'y':'';
+    //     var allow_remark = $('#allow_remark').is(":checked") ? 'y':'';
+    //     // 验证
+
+    //     var params = {title:title, content:content, tag:tag, sort:sort, date:date, excerpt:excerpt, password:password, top:top, sortop:sortop, allow_remark:allow_remark};
+    //     // console.log(params);
+    //     return false;
+    // }
     </script>
 </body>
 </html>
