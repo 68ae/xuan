@@ -123,9 +123,9 @@
   </aside>
   <script type="text/javascript">
     $(function (){
-      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL
+      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL的方法名
       $('.sidebar-menu a').each(function(i,n){  //循环导航的a标签
-          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接
+          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接最后的方法名
           if(href == curr_url){  //如果当前URL,和a标签中的href相等。
               $(this).parent('li').addClass('active');  //那么就给这个li标签增加active类。
               $(this).parent('li').siblings().removeClass('active');  //那么就给其他li标签增加active类。
@@ -165,7 +165,7 @@
                         <div class="form-group">
                             <label>内容</label>
                             <script id="content" name="content" type="text/plain"></script>
-                            <input type="hidden" value="" id="contentT"  name="contentT">
+                            <textarea style="display:none" id="contentT"  name="contentT"></textarea>
                         </div>
                     </div>
                     <div role="form" class="col-lg-4">

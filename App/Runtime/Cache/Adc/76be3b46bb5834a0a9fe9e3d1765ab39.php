@@ -232,6 +232,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="gid" name="gid" value="<?php echo ($gid); ?>">
                     {__TOKEN__}
                     <div role="form" class="col-lg-12">
                         <button type="submit" class="btn btn-primary">提交</button>

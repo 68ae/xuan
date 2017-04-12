@@ -80,7 +80,7 @@ class NewsController extends BaseController {
     public function newsAddSave()
     {
         $data['title'] = I('title');
-        $data['content'] = I('content');
+        $data['content'] = htmlspecialchars_decode(I('content'));
         $data['tag'] = I('tag');
         $data['sortid'] = I('sort');
         $data['date'] = strtotime(I('date'));
@@ -116,16 +116,18 @@ class NewsController extends BaseController {
         $blogs = $blog->find($gid);
         $this->assign('sorts', $sorts);
         $this->assign('blogs', $blogs);
+        $this->assign('gid', $gid);
         $this->display('edit');
     }
 
     /*
-        新建文章保存
+        文章修改
     */
     public function newsEditSave()
     {
+        $gid = I('gid');
         $data['title'] = I('title');
-        $data['content'] = I('content');
+        $data['content'] = htmlspecialchars_decode(I('content'));
         $data['tag'] = I('tag');
         $data['sortid'] = I('sort');
         $data['date'] = strtotime(I('date'));
@@ -136,9 +138,9 @@ class NewsController extends BaseController {
         $data['allow_remark'] = I('allow_remark');
         $data['type'] = 'bolg';
         $data['author'] = session('userInfo.uid');
-var_dump($data);
-        // $blog = M('Blog');
-        // $flag = $blog->add($data);
+
+        $blog = M('Blog');
+        $flag = $blog->where('gid='.$gid)->save($data);
         if($flag)
         {
             $this->ajaxReturn(array('result' => 'success'));
