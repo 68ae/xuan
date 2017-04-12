@@ -123,9 +123,9 @@
   </aside>
   <script type="text/javascript">
     $(function (){
-      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL
+      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL的方法名
       $('.sidebar-menu a').each(function(i,n){  //循环导航的a标签
-          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接
+          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接最后的方法名
           if(href == curr_url){  //如果当前URL,和a标签中的href相等。
               $(this).parent('li').addClass('active');  //那么就给这个li标签增加active类。
               $(this).parent('li').siblings().removeClass('active');  //那么就给其他li标签增加active类。
@@ -201,9 +201,10 @@
 <!-- DataTables -->
 <script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
   $(function () {
-    var dataTables_news = $('#example2').DataTable({
+    var dataTablesnews = $('#example2').DataTable({
         language: {
             url: '/public/adc/plugins/datatables/Chinese.json'
         },
@@ -234,6 +235,35 @@
         ]
     });
   });
+
+  // 编辑
+  function edit(gid)
+  {
+    location.href='/adc/news/newsedit?gid=' + gid;
+  }
+
+  // 删除
+  function del(gid)
+  {
+    layer.confirm('您确定要删除此文章吗？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+      $.ajax({
+          url : "/adc/news/newsAddDel",
+          type : "post",
+          dataType : "json",
+          data: {gid:gid},
+          success : function(data) {
+              if(data.result == 'success') {
+                  dataTablesnews.draw( false );
+              }
+              else {
+                  layer.msg(data.msg);
+              }
+          }
+      });
+    });
+  }
 </script>
 </body>
 </html>

@@ -62,9 +62,10 @@
 <!-- DataTables -->
 <script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
   $(function () {
-    var dataTables_news = $('#example2').DataTable({
+    var dataTablesnews = $('#example2').DataTable({
         language: {
             url: '/public/adc/plugins/datatables/Chinese.json'
         },
@@ -95,6 +96,35 @@
         ]
     });
   });
+
+  // 编辑
+  function edit(gid)
+  {
+    location.href='/adc/news/newsedit?gid=' + gid;
+  }
+
+  // 删除
+  function del(gid)
+  {
+    layer.confirm('您确定要删除此文章吗？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+      $.ajax({
+          url : "/adc/news/newsAddDel",
+          type : "post",
+          dataType : "json",
+          data: {gid:gid},
+          success : function(data) {
+              if(data.result == 'success') {
+                  dataTablesnews.draw( false );
+              }
+              else {
+                  layer.msg(data.msg);
+              }
+          }
+      });
+    });
+  }
 </script>
 </body>
 </html>

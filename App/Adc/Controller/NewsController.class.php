@@ -91,14 +91,79 @@ class NewsController extends BaseController {
         $data['allow_remark'] = I('allow_remark');
         $data['type'] = 'bolg';
         $data['author'] = session('userInfo.uid');
-        
-        
-        $blog = M('Blog');
-        $sql = $blog->fetchSql(true)->add($data);
-        echo strtotime($data['date']);
 
-        $this->ajaxReturn(array('result' => 'success1', 'msg' => '失败了'));
+        $blog = M('Blog');
+        $flag = $blog->add($data);
+        if($flag)
+        {
+            $this->ajaxReturn(array('result' => 'success'));
+        }
+        else
+        {
+            $this->ajaxReturn(array('result' => 'false', 'msg' => '文章添加失败！'));
+        }
     }
 
+    /*
+        修改文章
+    */
+    public function newsEdit()
+    {
+        $gid = I('gid');
+        $sort = M('Sort');
+        $blog = M('Blog');
+        $sorts = $sort->select();
+        $blogs = $blog->find($gid);
+        $this->assign('sorts', $sorts);
+        $this->assign('blogs', $blogs);
+        $this->display('edit');
+    }
 
+    /*
+        新建文章保存
+    */
+    public function newsEditSave()
+    {
+        $data['title'] = I('title');
+        $data['content'] = I('content');
+        $data['tag'] = I('tag');
+        $data['sortid'] = I('sort');
+        $data['date'] = strtotime(I('date'));
+        $data['excerpt'] = I('excerpt');
+        $data['password'] = I('password');
+        $data['top'] = I('top');
+        $data['sortop'] = I('sortop');
+        $data['allow_remark'] = I('allow_remark');
+        $data['type'] = 'bolg';
+        $data['author'] = session('userInfo.uid');
+var_dump($data);
+        // $blog = M('Blog');
+        // $flag = $blog->add($data);
+        if($flag)
+        {
+            $this->ajaxReturn(array('result' => 'success'));
+        }
+        else
+        {
+            $this->ajaxReturn(array('result' => 'false', 'msg' => '文章添加失败！'));
+        }
+    }
+
+    /*
+        删除文章
+    */
+    public function newsAddDel()
+    {
+        $gid = I('gid');
+        $blog = M('Blog');
+        $flag = $blog->delete($gid);
+        if($flag)
+        {
+            $this->ajaxReturn(array('result' => 'success'));
+        }
+        else
+        {
+            $this->ajaxReturn(array('result' => 'false', 'msg' => '文章删除失败！'));
+        }
+    }
 }

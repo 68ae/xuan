@@ -123,9 +123,9 @@
   </aside>
   <script type="text/javascript">
     $(function (){
-      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL
+      var curr_url = '<?php echo (ACTION_NAME); ?>';  //获取当前URL的方法名
       $('.sidebar-menu a').each(function(i,n){  //循环导航的a标签
-          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接
+          var href = $(this).attr('href').split("/").pop(); //a标签中的href链接最后的方法名
           if(href == curr_url){  //如果当前URL,和a标签中的href相等。
               $(this).parent('li').addClass('active');  //那么就给这个li标签增加active类。
               $(this).parent('li').siblings().removeClass('active');  //那么就给其他li标签增加active类。
@@ -139,18 +139,13 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
-    <!-- <section class="content-header">
-      <h1>
-        文章管理
-      </h1>
-    </section> -->
     <!-- /.content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-8">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">文章添加</h3>
+              <h3 class="box-title">文章修改</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -158,20 +153,20 @@
                     <div role="form" class="col-lg-12">
                         <div class="form-group">
                             <label>标题</label>
-                            <input class="form-control" placeholder="请输入标题" id="title" name="title">
+                            <input class="form-control" placeholder="请输入标题" value="<?php echo ($blogs['title']); ?>" id="title" name="title">
                         </div>
                     </div>
                     <div role="form" class="col-lg-12">
                         <div class="form-group">
                             <label>内容</label>
-                            <script id="content" name="content" type="text/plain"></script>
-                            <input type="hidden" value="" id="contentT"  name="contentT">
+                            <script id="content" name="content" type="text/plain"><?php echo ($blogs['content']); ?></script>
+                            <textarea style="display:none" id="contentT"  name="contentT"><?php echo ($blogs['content']); ?></textarea>
                         </div>
                     </div>
                     <div role="form" class="col-lg-4">
                         <div class="form-group">
                             <label>标签</label>
-                            <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag" name="tag">
+                            <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" value="<?php echo ($blogs['tag']); ?>" id="tag" name="tag">
                         </div>
                     </div>
                     <div role="form" class="col-lg-4">
@@ -179,15 +174,15 @@
                             <label>分类</label>
                             <select class="form-control" id="sort" name="sort">
                                 <option value="">请选择</option>
-                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>"><?php echo ($sort["sortname"]); ?></option>
-                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
+                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>" <?php if($sort["sid"] == $blogs['sortid']): ?>selected = "selected"<?php endif; ?>><?php echo ($sort["sortname"]); ?></option>
+                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>" <?php if($tt["sid"] == $blogs['sortid']): ?>selected = "selected"<?php endif; ?>>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
                     <div role="form" class="col-lg-4">
                         <div class="form-group">
                             <label>发布时间</label>
-                            <input class="form-control" id="date" name="date" value="<?php echo date('Y-m-d H:i:s');?>">
+                            <input class="form-control" id="date" name="date" value="<?php echo date("Y-m-d H:i:s", $blogs['date']);?>">
                         </div>
                     </div>
 
@@ -203,33 +198,33 @@
                                     <div role="form" class="col-lg-12">
                                         <div class="form-group">
                                             <label>文章摘要</label>
-                                            <textarea class="form-control" rows="3" id="excerpt" name="excerpt"></textarea>
+                                            <textarea class="form-control" rows="3" value="<?php echo ($blogs['excerpt']); ?>" id="excerpt" name="excerpt"></textarea>
                                         </div>
                                     </div>
 
                                     <div role="form" class="col-lg-4">
                                         <div class="form-group">
-                                            <input class="form-control" id="password" name="password" placeholder="文章访问密码:不设置,请留空.">
+                                            <input class="form-control" id="password" name="password" value="<?php echo ($blogs['password']); ?>" placeholder="文章访问密码:不设置,请留空.">
                                         </div>
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="checkbox">
                                           <label>
-                                            <input type="checkbox" value="y" id="top" name="top">文章置顶
+                                            <input type="checkbox" value="y" id="top" name="top" <?php if($blogs['top'] == y): ?>checked<?php endif; ?>>文章置顶
                                           </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="checkbox">
                                           <label>
-                                            <input type="checkbox" value="y" id="sortop" name="sortop">分类置顶
+                                            <input type="checkbox" value="y" id="sortop" name="sortop" <?php if($blogs['sortop'] == y): ?>checked<?php endif; ?>>分类置顶
                                           </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="checkbox">
                                           <label>
-                                            <input type="checkbox" value="y" id="allow_remark" name="allow_remark" checked>允许评论
+                                            <input type="checkbox" value="y" id="allow_remark" name="allow_remark"  <?php if($blogs['allow_remark'] == y): ?>checked<?php endif; ?>>允许评论
                                           </label>
                                         </div>
                                     </div>
@@ -305,7 +300,7 @@
             submitHandler: function(form) {
                 var param = $("#form_add_news").serialize();
                 $.ajax({
-                    url : "/adc/news/newsAddSave",
+                    url : "/adc/news/newsEditSave",
                     type : "post",
                     dataType : "json",
                     data: param,
