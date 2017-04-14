@@ -117,6 +117,19 @@
             <li><a href="/adc/news/newslist"><i class="fa fa-circle-o"></i> 文章列表</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-sitemap"></i>
+            <span>类别</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/adc/sort/sortadd"><i class="fa fa-circle-o"></i> 新增类别</a></li>
+            <li><a href="/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -249,7 +262,7 @@
         btn: ['确定','取消'] //按钮
     }, function(){
       $.ajax({
-          url : "/adc/news/newsAddDel",
+          url : "/adc/news/newsDel",
           type : "post",
           dataType : "json",
           data: {gid:gid},

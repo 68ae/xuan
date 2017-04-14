@@ -22,15 +22,13 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>标题</th>
-                  <th>分类</th>
-                  <th>作者</th>
-                  <th>时间</th>
-                  <th>评论</th>
-                  <th>阅读</th>
+                  <th>类别名称</th>
+                  <th>缩写</th>
+                  <th>排序</th>
+                  <th>描述</th>
                   <th>操作</th>
                   </tr>
                 </thead>
@@ -65,31 +63,29 @@
 <script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
   $(function () {
-    var dataTablesnews = $('#example2').DataTable({
+    var table_sort = $('#example').DataTable({
         language: {
             url: '/public/adc/plugins/datatables/Chinese.json'
         },
         serverSide: true, // 是否开启服务器模式
-        sAjaxSource:'/adc/news/getNewsList',
+        sAjaxSource:'/adc/sort/getSortList',
         paging: true,  //是否开启本地分页
         lengthChange: true, // 是否允许用户改变表格每页显示的记录数
         searching: true, //是否允许Datatables开启本地搜索
         info: true, // 控制是否显示表格左下角的信息
-        order:[3], //默认排序
+        // order:[0], //默认排序
 
         aoColumns: [
-            { "mData": "title" },
             { "mData": "sortname" },
-            { "mData": "nickname" },
-            { "mData": "date" },
-            { "mData": "comnum" },
-            { "mData": "views" }
+            { "mData": "alias" },
+            { "mData": "taxis" },
+            { "mData": "description" }
         ],
         "aoColumnDefs":[
             {
-                "aTargets": [6],
+                "aTargets": [4],
                 "mRender": function (data,type,full) {
-                    return '<i class="fa fa-edit btn"  onclick="edit(' + full.gid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.gid + ')"></i>';
+                    return '<i class="fa fa-edit btn"  onclick="edit(' + full.sid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.sid + ')"></i>';
                 },
                 "orderable":false
             }
@@ -98,25 +94,25 @@
   });
 
   // 编辑
-  function edit(gid)
+  function edit(sid)
   {
-    location.href='/adc/news/newsedit?gid=' + gid;
+    location.href='/adc/sort/sortedit?sid=' + sid;
   }
 
   // 删除
-  function del(gid)
+  function del(sid)
   {
-    layer.confirm('您确定要删除此文章吗？', {
+    layer.confirm('您确定要删除此类别吗？', {
         btn: ['确定','取消'] //按钮
     }, function(){
       $.ajax({
-          url : "/adc/news/newsDel",
+          url : "/adc/sort/sortDel",
           type : "post",
           dataType : "json",
-          data: {gid:gid},
+          data: {sid:sid},
           success : function(data) {
               if(data.result == 'success') {
-                  dataTablesnews.draw( false );
+                  table_sort.draw( false );
               }
               else {
                   layer.msg(data.msg);

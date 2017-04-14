@@ -147,14 +147,14 @@ class NewsController extends BaseController {
         }
         else
         {
-            $this->ajaxReturn(array('result' => 'false', 'msg' => '文章添加失败！'));
+            $this->ajaxReturn(array('result' => 'false', 'msg' => '文章修改失败！'));
         }
     }
 
     /*
         删除文章
     */
-    public function newsAddDel()
+    public function newsDel()
     {
         $gid = I('gid');
         $blog = M('Blog');

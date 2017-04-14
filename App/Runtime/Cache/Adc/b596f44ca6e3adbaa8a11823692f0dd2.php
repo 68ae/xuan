@@ -148,7 +148,7 @@
       });
     });
   </script>
-
+<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -160,102 +160,26 @@
     <!-- /.content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">文章添加</h3>
+              <h3 class="box-title">文章列表</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form class="panel-body" id="form_add_news" name="form_add_news" method="POST" enctype="multipart/form-data">
-                    <div role="form" class="col-lg-12">
-                        <div class="form-group">
-                            <label>标题</label>
-                            <input class="form-control" placeholder="请输入标题" id="title" name="title">
-                        </div>
-                    </div>
-                    <div role="form" class="col-lg-12">
-                        <div class="form-group">
-                            <label>内容</label>
-                            <script id="content" name="content" type="text/plain"></script>
-                            <textarea style="display:none" id="contentT"  name="contentT"></textarea>
-                        </div>
-                    </div>
-                    <div role="form" class="col-lg-4">
-                        <div class="form-group">
-                            <label>标签</label>
-                            <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag" name="tag">
-                        </div>
-                    </div>
-                    <div role="form" class="col-lg-4">
-                        <div class="form-group">
-                            <label>分类</label>
-                            <select class="form-control" id="sort" name="sort">
-                                <option value="">请选择</option>
-                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>"><?php echo ($sort["sortname"]); ?></option>
-                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div role="form" class="col-lg-4">
-                        <div class="form-group">
-                            <label>发布时间</label>
-                            <input class="form-control" id="date" name="date" value="<?php echo date('Y-m-d H:i:s');?>">
-                        </div>
-                    </div>
-
-                    <div role="form" class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">高级选项</a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                <div class="panel-body">
-                                    <div role="form" class="col-lg-12">
-                                        <div class="form-group">
-                                            <label>文章摘要</label>
-                                            <textarea class="form-control" rows="3" id="excerpt" name="excerpt"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div role="form" class="col-lg-4">
-                                        <div class="form-group">
-                                            <input class="form-control" id="password" name="password" placeholder="文章访问密码:不设置,请留空.">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="top" name="top">文章置顶
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="sortop" name="sortop">分类置顶
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="allow_remark" name="allow_remark" checked>允许评论
-                                          </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {__TOKEN__}
-                    <div role="form" class="col-lg-12">
-                        <button type="submit" class="btn btn-primary">提交</button>
-                        <button type="reset" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
-                    </div>
-                </form>
+              <table id="example" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>类别名称</th>
+                  <th>缩写</th>
+                  <th>排序</th>
+                  <th>描述</th>
+                  <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -285,60 +209,70 @@
 <script src="/public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- 验证 -->
-<script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/Public/adc/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/adc/ueditor/ueditor.all.js"></script>
+<!-- DataTables -->
+<script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="/public/layer/layer.js"></script>
-<!-- 实例化编辑器 -->
 <script type="text/javascript">
-    var ue = UE.getEditor('content',{
-        initialFrameHeight: 260
-    });
-</script>
-<script type="text/javascript">
-    // 通过监听验证富文本
-    ue.addListener("blur",function(){
-      var contentT = ue.getContent();
-      $('#contentT').val(contentT);
-    })
-    //验证
-    $().ready(function() {
-        $("#form_add_news").validate({
-            ignore: "", //验证隐藏域
-            rules: {
-                title:     { required: true },
-                contentT:  { required: true },
-                sort:      { required: true },
-                date:      { required: true }
-            },
-            //通过之后回调
-            submitHandler: function(form) {
-                var param = $("#form_add_news").serialize();
-                $.ajax({
-                    url : "/adc/news/newsAddSave",
-                    type : "post",
-                    dataType : "json",
-                    data: param,
-                    success : function(data) {
-                        if(data.result == 'success') {
-                            location.href='/adc/news/newslist';
-                        }
-                        else {
-                            layer.msg(data.msg);
-                        }
-                    }
-                });
-            },
-            //不通过回调
-            invalidHandler: function(form, validator) {
-                return false;
+  $(function () {
+    var table_sort = $('#example').DataTable({
+        language: {
+            url: '/public/adc/plugins/datatables/Chinese.json'
+        },
+        serverSide: true, // 是否开启服务器模式
+        sAjaxSource:'/adc/sort/getSortList',
+        paging: true,  //是否开启本地分页
+        lengthChange: true, // 是否允许用户改变表格每页显示的记录数
+        searching: true, //是否允许Datatables开启本地搜索
+        info: true, // 控制是否显示表格左下角的信息
+        // order:[0], //默认排序
+
+        aoColumns: [
+            { "mData": "sortname" },
+            { "mData": "alias" },
+            { "mData": "taxis" },
+            { "mData": "description" }
+        ],
+        "aoColumnDefs":[
+            {
+                "aTargets": [4],
+                "mRender": function (data,type,full) {
+                    return '<i class="fa fa-edit btn"  onclick="edit(' + full.sid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.sid + ')"></i>';
+                },
+                "orderable":false
             }
-        });
+        ]
     });
-    //验证结束
-    </script>
+  });
+
+  // 编辑
+  function edit(sid)
+  {
+    location.href='/adc/sort/sortedit?sid=' + sid;
+  }
+
+  // 删除
+  function del(sid)
+  {
+    layer.confirm('您确定要删除此类别吗？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+      $.ajax({
+          url : "/adc/sort/sortDel",
+          type : "post",
+          dataType : "json",
+          data: {sid:sid},
+          success : function(data) {
+              if(data.result == 'success') {
+                  table_sort.draw( false );
+              }
+              else {
+                  layer.msg(data.msg);
+              }
+          }
+      });
+    });
+  }
+</script>
 </body>
 </html>

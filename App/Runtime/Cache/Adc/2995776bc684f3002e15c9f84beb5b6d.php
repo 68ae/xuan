@@ -163,93 +163,45 @@
         <div class="col-xs-8">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">文章添加</h3>
+              <h3 class="box-title">类别修改</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form class="panel-body" id="form_add_news" name="form_add_news" method="POST" enctype="multipart/form-data">
-                    <div role="form" class="col-lg-12">
+                <form class="panel-body" id="form_add_sort" name="form_add_sort" method="POST" enctype="multipart/form-data">
+                    <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>标题</label>
-                            <input class="form-control" placeholder="请输入标题" id="title" name="title">
+                            <label>类别名称</label>
+                            <input class="form-control" placeholder="请输入类别名称" id="sortname" name="sortname" value="<?php echo ($sort['sortname']); ?>">
                         </div>
                     </div>
-                    <div role="form" class="col-lg-12">
+                    <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>内容</label>
-                            <script id="content" name="content" type="text/plain"></script>
-                            <textarea style="display:none" id="contentT"  name="contentT"></textarea>
+                            <label>链接缩写</label>
+                            <input class="form-control" placeholder="页面展示时候的url，英文" id="alias" name="alias" value="<?php echo ($sort['alias']); ?>">
                         </div>
                     </div>
-                    <div role="form" class="col-lg-4">
+                    <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>标签</label>
-                            <input class="form-control" placeholder="文章标签，逗号或空格分隔，过多的标签会影响系统运行效率" id="tag" name="tag">
+                            <label>排序</label>
+                            <input class="form-control" placeholder="1，2，3等" id="taxis" name="taxis" value="<?php echo ($sort['taxis']); ?>">
                         </div>
                     </div>
-                    <div role="form" class="col-lg-4">
+                    <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>分类</label>
-                            <select class="form-control" id="sort" name="sort">
-                                <option value="">请选择</option>
-                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sort): if($sort["pid"] == 0): ?><option value="<?php echo ($sort["sid"]); ?>"><?php echo ($sort["sortname"]); ?></option>
-                                        <?php if(is_array($sorts)): foreach($sorts as $key=>$tt): if($sort['sid'] == $tt['pid']): ?><option value="<?php echo ($tt["sid"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($tt["sortname"]); ?></option><?php endif; endforeach; endif; endif; endforeach; endif; ?>
+                            <label>继承自</label>
+                            <select class="form-control" id="pid" name="pid">
+                                <option value="0">无继承</option>
+                                <?php if(is_array($sorts)): foreach($sorts as $key=>$sortv): if($sortv["pid"] == 0): ?><option value="<?php echo ($sortv["sid"]); ?>" <?php if($sortv["sid"] == $sort['pid']): ?>selected = "selected"<?php endif; ?>><?php echo ($sortv["sortname"]); ?></option><?php endif; endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
-                    <div role="form" class="col-lg-4">
+                    <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>发布时间</label>
-                            <input class="form-control" id="date" name="date" value="<?php echo date('Y-m-d H:i:s');?>">
+                            <label>描述</label>
+                            <input class="form-control" id="description" name="description" value="<?php echo ($sort['description']); ?>">
                         </div>
                     </div>
-
-                    <div role="form" class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">高级选项</a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                <div class="panel-body">
-                                    <div role="form" class="col-lg-12">
-                                        <div class="form-group">
-                                            <label>文章摘要</label>
-                                            <textarea class="form-control" rows="3" id="excerpt" name="excerpt"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div role="form" class="col-lg-4">
-                                        <div class="form-group">
-                                            <input class="form-control" id="password" name="password" placeholder="文章访问密码:不设置,请留空.">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="top" name="top">文章置顶
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="sortop" name="sortop">分类置顶
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="checkbox">
-                                          <label>
-                                            <input type="checkbox" value="y" id="allow_remark" name="allow_remark" checked>允许评论
-                                          </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <input type="hidden" id="sid" name="sid" value="<?php echo ($sid); ?>">
                     {__TOKEN__}
                     <div role="form" class="col-lg-12">
                         <button type="submit" class="btn btn-primary">提交</button>
@@ -288,43 +240,28 @@
 <!-- 验证 -->
 <script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/Public/adc/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/adc/ueditor/ueditor.all.js"></script>
 <script src="/public/layer/layer.js"></script>
-<!-- 实例化编辑器 -->
+
 <script type="text/javascript">
-    var ue = UE.getEditor('content',{
-        initialFrameHeight: 260
-    });
-</script>
-<script type="text/javascript">
-    // 通过监听验证富文本
-    ue.addListener("blur",function(){
-      var contentT = ue.getContent();
-      $('#contentT').val(contentT);
-    })
     //验证
     $().ready(function() {
-        $("#form_add_news").validate({
-            ignore: "", //验证隐藏域
+        $("#form_add_sort").validate({
             rules: {
-                title:     { required: true },
-                contentT:  { required: true },
-                sort:      { required: true },
-                date:      { required: true }
+                sortname:     { required: true },
+                alias:        { required: true },
+                taxis:        { required: true }
             },
             //通过之后回调
             submitHandler: function(form) {
-                var param = $("#form_add_news").serialize();
+                var param = $("#form_add_sort").serialize();
                 $.ajax({
-                    url : "/adc/news/newsAddSave",
+                    url : "/adc/sort/sortEditSave",
                     type : "post",
                     dataType : "json",
                     data: param,
                     success : function(data) {
                         if(data.result == 'success') {
-                            location.href='/adc/news/newslist';
+                            location.href='/adc/sort/sortlist';
                         }
                         else {
                             layer.msg(data.msg);
