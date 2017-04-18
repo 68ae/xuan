@@ -216,37 +216,35 @@
 <script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
-  $(function () {
-    var dataTablesnews = $('#example2').DataTable({
-        language: {
-            url: '/public/adc/plugins/datatables/Chinese.json'
-        },
-        serverSide: true, // 是否开启服务器模式
-        sAjaxSource:'/adc/news/getNewsList',
-        paging: true,  //是否开启本地分页
-        lengthChange: true, // 是否允许用户改变表格每页显示的记录数
-        searching: true, //是否允许Datatables开启本地搜索
-        info: true, // 控制是否显示表格左下角的信息
-        order:[3], //默认排序
+  var dataTablesnews = $('#example2').DataTable({
+      language: {
+          url: '/public/adc/plugins/datatables/Chinese.json'
+      },
+      serverSide: true, // 是否开启服务器模式
+      sAjaxSource:'/adc/news/getNewsList',
+      paging: true,  //是否开启本地分页
+      lengthChange: true, // 是否允许用户改变表格每页显示的记录数
+      searching: true, //是否允许Datatables开启本地搜索
+      info: true, // 控制是否显示表格左下角的信息
+      order:[3], //默认排序
 
-        aoColumns: [
-            { "mData": "title" },
-            { "mData": "sortname" },
-            { "mData": "nickname" },
-            { "mData": "date" },
-            { "mData": "comnum" },
-            { "mData": "views" }
-        ],
-        "aoColumnDefs":[
-            {
-                "aTargets": [6],
-                "mRender": function (data,type,full) {
-                    return '<i class="fa fa-edit btn"  onclick="edit(' + full.gid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.gid + ')"></i>';
-                },
-                "orderable":false
-            }
-        ]
-    });
+      aoColumns: [
+          { "mData": "title" },
+          { "mData": "sortname" },
+          { "mData": "nickname" },
+          { "mData": "date" },
+          { "mData": "comnum" },
+          { "mData": "views" }
+      ],
+      "aoColumnDefs":[
+          {
+              "aTargets": [6],
+              "mRender": function (data,type,full) {
+                  return '<i class="fa fa-edit btn"  onclick="edit(' + full.gid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.gid + ')"></i>';
+              },
+              "orderable":false
+          }
+      ]
   });
 
   // 编辑

@@ -119,7 +119,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-sitemap"></i>
             <span>类别</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

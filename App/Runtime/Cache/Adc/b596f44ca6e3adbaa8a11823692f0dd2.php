@@ -214,7 +214,6 @@
 <script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
-  $(function () {
     var table_sort = $('#example').DataTable({
         language: {
             url: '/public/adc/plugins/datatables/Chinese.json'
@@ -225,7 +224,7 @@
         lengthChange: true, // 是否允许用户改变表格每页显示的记录数
         searching: true, //是否允许Datatables开启本地搜索
         info: true, // 控制是否显示表格左下角的信息
-        // order:[0], //默认排序
+        order:[], //默认排序
 
         aoColumns: [
             { "mData": "sortname" },
@@ -243,7 +242,6 @@
             }
         ]
     });
-  });
 
   // 编辑
   function edit(sid)
@@ -264,6 +262,7 @@
           data: {sid:sid},
           success : function(data) {
               if(data.result == 'success') {
+                  layer.closeAll();
                   table_sort.draw( false );
               }
               else {

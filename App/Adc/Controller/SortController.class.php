@@ -18,17 +18,17 @@ class SortController extends BaseController {
         $sEcho = I('sEcho', int, 0); 
         $start = I('iDisplayStart'); //显示的起始索引
         $length = I('iDisplayLength');//显示的行数
-        $sort_th = I('iSortCol_0');//被排序的列
+        $sort_th = I('iSortCol_0', -1);//被排序的列
         $sort_type = I('sSortDir_0', 'desc');//排序的方向 "desc" 或者 "asc". 
         $search = I('sSearch', ''); 
 
-        if($sort_th==0){//类目
+        if(0 == $sort_th){//类目
             $sort_key = 'a.sortname ';
-        }else if($sort_th==1){
+        }else if(1 == $sort_th){
             $sort_key = 'a.alias ';
-        }else if($sort_th==2){
+        }else if(2 == $sort_th){
             $sort_key = 'a.taxis ';
-        }else if($sort_th==3){
+        }else if(3 == $sort_th){
             $sort_key = 'a.description ';
         }else{
             $sort_key = 'a.sid ';
@@ -39,6 +39,7 @@ class SortController extends BaseController {
                     ->field('a.sid, a.sortname, a.alias, a.taxis, a.description')
                     ->limit($start,$length)
                     ->order($sort_key . $sort_type);
+
         if('' != $search || NULL != $search)
         {
             $sort = $sort->where("a.sortname like '%{$search}%' ");
