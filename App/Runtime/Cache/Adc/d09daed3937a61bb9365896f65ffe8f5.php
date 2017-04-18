@@ -38,7 +38,7 @@
     <!-- Logo -->
     <a href="/adc" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>W</b>CX</span>
+      <span class="logo-mini"><b>C</b>X</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Cheng</b>X</span>
     </a>
@@ -130,6 +130,12 @@
             <li><a href="/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="/adc/comment/commentlist">
+            <i class="fa fa-comments-o"></i>
+            <span>评论</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -160,8 +166,8 @@
             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">CPU</span>
-              <span class="info-box-number">20<small>%</small></span>
+              <span class="info-box-text">内存使用</span>
+              <span class="info-box-number"><?php echo ($memory); ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -173,8 +179,8 @@
             <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">喜欢</span>
-              <span class="info-box-number">41,410</span>
+              <span class="info-box-text">评论总数</span>
+              <span class="info-box-number"><?php echo ($comments); ?> <small>条</small></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -190,8 +196,8 @@
             <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">销售</span>
-              <span class="info-box-number">760</span>
+              <span class="info-box-text">文章总数</span>
+              <span class="info-box-number"><?php echo ($blogs); ?> <small>条</small></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -202,8 +208,8 @@
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
             <div class="info-box-content">
-              <span class="info-box-text">新会员</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-text">会员总数</span>
+              <span class="info-box-number"><?php echo ($users); ?> <small>个</small></span>
             </div>
             <!-- /.info-box-content -->
           </div>

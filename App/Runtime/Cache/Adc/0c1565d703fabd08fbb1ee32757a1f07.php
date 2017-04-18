@@ -130,6 +130,12 @@
             <li><a href="/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="/adc/comment/commentlist">
+            <i class="fa fa-comments-o"></i>
+            <span>评论</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -163,17 +169,18 @@
         <div class="col-xs-12">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">文章列表</h3>
+              <h3 class="box-title">评论列表</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>类别名称</th>
-                  <th>缩写</th>
-                  <th>排序</th>
-                  <th>描述</th>
+                  <th>内容</th>
+                  <th>评论者</th>
+                  <th>所属文章</th>
+                  <th>来自</th>
+                  <th>时间</th>
                   <th>操作</th>
                   </tr>
                 </thead>
@@ -214,12 +221,12 @@
 <script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="/public/layer/layer.js"></script>
 <script type="text/javascript">
-  var table_sort = $('#example').DataTable({
+  var table_comment = $('#example').DataTable({
       language: {
           url: '/public/adc/plugins/datatables/Chinese.json'
       },
       serverSide: true, // 是否开启服务器模式
-      sAjaxSource:'/adc/sort/getSortList',
+      sAjaxSource:'/adc/comment/getCommentList',
       paging: true,  //是否开启本地分页
       lengthChange: true, // 是否允许用户改变表格每页显示的记录数
       searching: true, //是否允许Datatables开启本地搜索
@@ -227,16 +234,27 @@
       order:[], //默认排序
 
       aoColumns: [
-          { "mData": "sortname" },
-          { "mData": "alias" },
-          { "mData": "taxis" },
-          { "mData": "description" }
+          { "mData": "comment" },
+          { "mData": "poster" },
+          { "mData": "blogname" },
+          { "mData": "ip" },
+          { "mData": "date" }
       ],
       "aoColumnDefs":[
           {
-              "aTargets": [4],
+              "aTargets": [0],
               "mRender": function (data,type,full) {
-                  return '<i class="fa fa-edit btn"  onclick="edit(' + full.sid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.sid + ')"></i>';
+                  if (full.comment.length > 15) {
+                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment.substring(0,15) + '...</a>';
+                  }else{
+                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment + '</a>';
+                  }
+              }
+          },
+          {
+              "aTargets": [5],
+              "mRender": function (data,type,full) {
+                  return '<i class="fa fa-edit btn"  onclick="edit(' + full.cid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.cid + ')"></i>';
               },
               "orderable":false
           }
@@ -244,26 +262,26 @@
   });
 
   // 编辑
-  function edit(sid)
+  function edit(cid)
   {
-    location.href='/adc/sort/sortedit?sid=' + sid;
+    location.href='/adc/comment/commentedit?cid=' + cid;
   }
 
   // 删除
-  function del(sid)
+  function del(cid)
   {
     layer.confirm('您确定要删除此类别吗？', {
         btn: ['确定','取消'] //按钮
     }, function(){
       $.ajax({
-          url : "/adc/sort/sortDel",
+          url : "/adc/comment/commentDel",
           type : "post",
           dataType : "json",
-          data: {sid:sid},
+          data: {cid:cid},
           success : function(data) {
               if(data.result == 'success') {
                   layer.closeAll();
-                  table_sort.draw( false );
+                  table_comment.draw( false );
               }
               else {
                   layer.msg(data.msg);
@@ -271,6 +289,13 @@
           }
       });
     });
+  }
+
+  // 查看详细
+  function opendes(comment, cid)
+  {
+    layer.tips(comment, '#'+cid)
+
   }
 </script>
 </body>
