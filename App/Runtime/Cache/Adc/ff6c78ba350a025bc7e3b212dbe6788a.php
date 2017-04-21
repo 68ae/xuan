@@ -167,7 +167,7 @@
       });
     });
   </script>
-<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -179,27 +179,69 @@
     <!-- /.content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-8">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">评论列表</h3>
+              <h3 class="box-title">基本设置</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>内容</th>
-                  <th>评论者</th>
-                  <th>所属文章</th>
-                  <th>来自</th>
-                  <th>时间</th>
-                  <th>操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
+                <form class="panel-body" id="form_add_basicset" name="form_add_basicset" method="POST" enctype="multipart/form-data">
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>站点名称</label>
+                            <input class="form-control" id="blogname" name="blogname" value="<?php echo ($optionArr['blogname']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>站点副标题</label>
+                            <input class="form-control" id="bloginfo" name="bloginfo" value="<?php echo ($optionArr['bloginfo']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>浏览器标题</label>
+                            <input class="form-control" id="site_title" name="site_title" value="<?php echo ($optionArr['site_title']); ?>" >
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>站点关键字</label>
+                            <input class="form-control" id="site_key" name="site_key" value="<?php echo ($optionArr['site_key']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>浏览器描述</label>
+                            <input class="form-control" id="site_description" name="site_description" value="<?php echo ($optionArr['site_description']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>站点地址</label>
+                            <input class="form-control" id="blogurl" name="blogurl" value="<?php echo ($optionArr['blogurl']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>ICP备案号</label>
+                            <input class="form-control" id="icp" name="icp" value="<?php echo ($optionArr['icp']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-10">
+                        <div class="form-group">
+                            <label>首页底部信息</label>
+                            <textarea class="form-control" rows="3" id="footer_info" name="footer_info"><?php echo ($optionArr['footer_info']); ?></textarea>
+                            <span class="help-block">(支持html,可用于添加流量统计代码)</span>
+                        </div>
+                    </div>
+                    {__TOKEN__}
+                    <div role="form" class="col-lg-12">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                        <button type="reset" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
@@ -229,87 +271,50 @@
 <script src="/public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- DataTables -->
-<script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- 验证 -->
+<script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
 <script src="/public/layer/layer.js"></script>
+
 <script type="text/javascript">
-  var table_comment = $('#example').DataTable({
-      language: {
-          url: '/public/adc/plugins/datatables/Chinese.json'
-      },
-      serverSide: true, // 是否开启服务器模式
-      sAjaxSource:'/adc/comment/getCommentList',
-      paging: true,  //是否开启本地分页
-      lengthChange: true, // 是否允许用户改变表格每页显示的记录数
-      searching: true, //是否允许Datatables开启本地搜索
-      info: true, // 控制是否显示表格左下角的信息
-      order:[], //默认排序
-
-      aoColumns: [
-          { "mData": "comment" },
-          { "mData": "poster" },
-          { "mData": "blogname" },
-          { "mData": "ip" },
-          { "mData": "date" }
-      ],
-      "aoColumnDefs":[
-          {
-              "aTargets": [0],
-              "mRender": function (data,type,full) {
-                  if (full.comment.length > 15) {
-                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment.substring(0,15) + '...</a>';
-                  }else{
-                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment + '</a>';
-                  }
-              }
-          },
-          {
-              "aTargets": [5],
-              "mRender": function (data,type,full) {
-                  return '<i class="fa fa-edit btn"  onclick="edit(' + full.cid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.cid + ')"></i>';
-              },
-              "orderable":false
-          }
-      ]
-  });
-
-  // 编辑
-  function edit(cid)
-  {
-    location.href='/adc/comment/commentedit?cid=' + cid;
-  }
-
-  // 删除
-  function del(cid)
-  {
-    layer.confirm('您确定要删除此类别吗？', {
-        btn: ['确定','取消'] //按钮
-    }, function(){
-      $.ajax({
-          url : "/adc/comment/commentDel",
-          type : "post",
-          dataType : "json",
-          data: {cid:cid},
-          success : function(data) {
-              if(data.result == 'success') {
-                  layer.closeAll();
-                  table_comment.draw( false );
-              }
-              else {
-                  layer.msg(data.msg);
-              }
-          }
-      });
+    //验证
+    $().ready(function() {
+        $("#form_add_basicset").validate({
+            rules: {
+                blogname:          { required: true },
+                bloginfo:          { required: true },
+                site_title:        { required: true },
+                site_description:  { required: true },
+                site_key:          { required: true },
+                blogurl:           { required: true },
+                icp:               { required: true },
+                footer_info:       { required: true }
+            },
+            //通过之后回调
+            submitHandler: function(form) {
+                var param = $("#form_add_basicset").serialize();
+                $.ajax({
+                    url : "/adc/set/basicSetSave",
+                    type : "post",
+                    dataType : "json",
+                    data: param,
+                    success : function(data) {
+                        if(data.result == 'success') {
+                            layer.msg(data.msg);
+                        }
+                        else {
+                            layer.msg(data.msg);
+                        }
+                    }
+                });
+            },
+            //不通过回调
+            invalidHandler: function(form, validator) {
+                return false;
+            }
+        });
     });
-  }
-
-  // 查看详细
-  function opendes(comment, cid)
-  {
-    layer.tips(comment, '#'+cid)
-
-  }
-</script>
+    //验证结束
+    </script>
 </body>
 </html>

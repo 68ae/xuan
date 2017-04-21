@@ -86,7 +86,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- search form -->
-      <!-- <form action="#" method="get" class="sidebar-form">
+      <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="搜索...">
               <span class="input-group-btn">
@@ -94,7 +94,7 @@
                 </button>
               </span>
         </div>
-      </form> -->
+      </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
@@ -136,19 +136,6 @@
             <span>评论</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cog"></i>
-            <span>系统</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/adc/set/basicset"><i class="fa fa-circle-o"></i> 基本设置</a></li>
-            <li><a href="/adc/set/personalset"><i class="fa fa-circle-o"></i> 个人设置</a></li>
-          </ul>
-        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -167,7 +154,7 @@
       });
     });
   </script>
-<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -179,27 +166,51 @@
     <!-- /.content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-8">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">评论列表</h3>
+              <h3 class="box-title">评论修改</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>内容</th>
-                  <th>评论者</th>
-                  <th>所属文章</th>
-                  <th>来自</th>
-                  <th>时间</th>
-                  <th>操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
+                <form class="panel-body" id="form_add_comment" name="form_add_comment" method="POST" enctype="multipart/form-data">
+                    <div role="form" class="col-lg-8">
+                        <div class="form-group">
+                            <label>评论内容</label>
+                            <input class="form-control" placeholder="评论内容" id="comment" name="comment" value="<?php echo ($comment['comment']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-8">
+                        <div class="form-group">
+                            <label>评论者</label>
+                            <input class="form-control" placeholder="评论者" id="poster" name="poster" value="<?php echo ($comment['poster']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-8">
+                        <div class="form-group">
+                            <label>所属文章</label>
+                            <input class="form-control" placeholder="所属文章" id="blogname" name="blogname" value="<?php echo ($comment['blogname']); ?>" readonly>
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-8">
+                        <div class="form-group">
+                            <label>来自</label>
+                            <input class="form-control" id="ip" name="ip" value="<?php echo ($comment['ip']); ?>">
+                        </div>
+                    </div>
+                    <div role="form" class="col-lg-8">
+                        <div class="form-group">
+                            <label>时间</label>
+                            <input class="form-control" id="date" name="date" value="<?php echo ($comment['date']); ?>">
+                        </div>
+                    </div>
+                    <input type="hidden" id="cid" name="cid" value="<?php echo ($cid); ?>">
+                    {__TOKEN__}
+                    <div role="form" class="col-lg-12">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                        <button type="reset" class="btn btn-default" onclick="javascript:history.go(-1);">取消</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
@@ -229,87 +240,46 @@
 <script src="/public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- DataTables -->
-<script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- 验证 -->
+<script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
 <script src="/public/layer/layer.js"></script>
+
 <script type="text/javascript">
-  var table_comment = $('#example').DataTable({
-      language: {
-          url: '/public/adc/plugins/datatables/Chinese.json'
-      },
-      serverSide: true, // 是否开启服务器模式
-      sAjaxSource:'/adc/comment/getCommentList',
-      paging: true,  //是否开启本地分页
-      lengthChange: true, // 是否允许用户改变表格每页显示的记录数
-      searching: true, //是否允许Datatables开启本地搜索
-      info: true, // 控制是否显示表格左下角的信息
-      order:[], //默认排序
-
-      aoColumns: [
-          { "mData": "comment" },
-          { "mData": "poster" },
-          { "mData": "blogname" },
-          { "mData": "ip" },
-          { "mData": "date" }
-      ],
-      "aoColumnDefs":[
-          {
-              "aTargets": [0],
-              "mRender": function (data,type,full) {
-                  if (full.comment.length > 15) {
-                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment.substring(0,15) + '...</a>';
-                  }else{
-                      return '<a href="javascript:;" id="' + full.cid + '" onclick="opendes(\'' + full.comment + '\',' + full.cid + ');" >' + full.comment + '</a>';
-                  }
-              }
-          },
-          {
-              "aTargets": [5],
-              "mRender": function (data,type,full) {
-                  return '<i class="fa fa-edit btn"  onclick="edit(' + full.cid + ')"></i><i class="fa fa-trash-o btn" onclick="del(' + full.cid + ')"></i>';
-              },
-              "orderable":false
-          }
-      ]
-  });
-
-  // 编辑
-  function edit(cid)
-  {
-    location.href='/adc/comment/commentedit?cid=' + cid;
-  }
-
-  // 删除
-  function del(cid)
-  {
-    layer.confirm('您确定要删除此类别吗？', {
-        btn: ['确定','取消'] //按钮
-    }, function(){
-      $.ajax({
-          url : "/adc/comment/commentDel",
-          type : "post",
-          dataType : "json",
-          data: {cid:cid},
-          success : function(data) {
-              if(data.result == 'success') {
-                  layer.closeAll();
-                  table_comment.draw( false );
-              }
-              else {
-                  layer.msg(data.msg);
-              }
-          }
-      });
+    //验证
+    $().ready(function() {
+        $("#form_add_comment").validate({
+            rules: {
+                comment:  { required: true },
+                poster:   { required: true },
+                ip:       { required: true },
+                date:     { required: true }
+            },
+            //通过之后回调
+            submitHandler: function(form) {
+                var param = $("#form_add_comment").serialize();
+                $.ajax({
+                    url : "/adc/comment/commentEditSave",
+                    type : "post",
+                    dataType : "json",
+                    data: param,
+                    success : function(data) {
+                        if(data.result == 'success') {
+                            location.href='/adc/comment/commentlist';
+                        }
+                        else {
+                            layer.msg(data.msg);
+                        }
+                    }
+                });
+            },
+            //不通过回调
+            invalidHandler: function(form, validator) {
+                return false;
+            }
+        });
     });
-  }
-
-  // 查看详细
-  function opendes(comment, cid)
-  {
-    layer.tips(comment, '#'+cid)
-
-  }
-</script>
+    //验证结束
+    </script>
 </body>
 </html>

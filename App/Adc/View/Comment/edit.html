@@ -18,49 +18,42 @@
         <div class="col-xs-8">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">类别修改</h3>
+              <h3 class="box-title">评论修改</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form class="panel-body" id="form_add_sort" name="form_add_sort" method="POST" enctype="multipart/form-data">
+                <form class="panel-body" id="form_add_comment" name="form_add_comment" method="POST" enctype="multipart/form-data">
                     <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>类别名称</label>
-                            <input class="form-control" placeholder="请输入类别名称" id="sortname" name="sortname" value="{$sort['sortname']}">
+                            <label>评论内容</label>
+                            <input class="form-control" placeholder="评论内容" id="comment" name="comment" value="{$comment['comment']}">
                         </div>
                     </div>
                     <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>链接缩写</label>
-                            <input class="form-control" placeholder="页面展示时候的url，英文" id="alias" name="alias" value="{$sort['alias']}">
+                            <label>评论者</label>
+                            <input class="form-control" placeholder="评论者" id="poster" name="poster" value="{$comment['poster']}">
                         </div>
                     </div>
                     <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>排序</label>
-                            <input class="form-control" placeholder="1，2，3等" id="taxis" name="taxis" value="{$sort['taxis']}">
+                            <label>所属文章</label>
+                            <input class="form-control" placeholder="所属文章" id="blogname" name="blogname" value="{$comment['blogname']}" readonly>
                         </div>
                     </div>
                     <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>继承自</label>
-                            <select class="form-control" id="pid" name="pid">
-                                <option value="0">无继承</option>
-                                <foreach name="sorts" item="sortv">
-                                    <if condition="$sortv.pid eq 0">
-                                        <option value="{$sortv.sid}" <if condition="$sortv.sid eq $sort['pid']"> selected = "selected" </if>>{$sortv.sortname}</option>
-                                    </if>
-                                </foreach>
-                            </select>
+                            <label>来自</label>
+                            <input class="form-control" id="ip" name="ip" value="{$comment['ip']}">
                         </div>
                     </div>
                     <div role="form" class="col-lg-8">
                         <div class="form-group">
-                            <label>描述</label>
-                            <input class="form-control" id="description" name="description" value="{$sort['description']}">
+                            <label>时间</label>
+                            <input class="form-control" id="date" name="date" value="{$comment['date']}">
                         </div>
                     </div>
-                    <input type="hidden" id="sid" name="sid" value="{$sid}">
+                    <input type="hidden" id="cid" name="cid" value="{$cid}">
                     {__TOKEN__}
                     <div role="form" class="col-lg-12">
                         <button type="submit" class="btn btn-primary">提交</button>
@@ -97,23 +90,24 @@
 <script type="text/javascript">
     //验证
     $().ready(function() {
-        $("#form_add_sort").validate({
+        $("#form_add_comment").validate({
             rules: {
-                sortname:     { required: true },
-                alias:        { required: true },
-                taxis:        { required: true }
+                comment:  { required: true },
+                poster:   { required: true },
+                ip:       { required: true },
+                date:     { required: true }
             },
             //通过之后回调
             submitHandler: function(form) {
-                var param = $("#form_add_sort").serialize();
+                var param = $("#form_add_comment").serialize();
                 $.ajax({
-                    url : "/adc/sort/sortEditSave",
+                    url : "/adc/comment/commentEditSave",
                     type : "post",
                     dataType : "json",
                     data: param,
                     success : function(data) {
                         if(data.result == 'success') {
-                            location.href='/adc/sort/sortlist';
+                            location.href='/adc/comment/commentlist';
                         }
                         else {
                             layer.msg(data.msg);

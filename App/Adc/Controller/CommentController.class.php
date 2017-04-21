@@ -3,7 +3,7 @@ namespace Adc\Controller;
 use Adc\Controller\BaseController;
 class CommentController extends BaseController {
     /*
-        类别列表
+        评论列表
     */
     public function commentList()
     {
@@ -11,7 +11,7 @@ class CommentController extends BaseController {
     }
 
     /*
-        获取类别列表
+        获取评论列表
     */
     public function getCommentList()
     {
@@ -23,13 +23,15 @@ class CommentController extends BaseController {
         $search = I('sSearch', ''); 
 
         if(0 == $sort_th){//类目
-            $sort_key = 'a.sortname ';
+            $sort_key = 'a.comment ';
         }else if(1 == $sort_th){
-            $sort_key = 'a.alias ';
+            $sort_key = 'a.poster ';
         }else if(2 == $sort_th){
-            $sort_key = 'a.taxis ';
+            $sort_key = 'b.title ';
         }else if(3 == $sort_th){
-            $sort_key = 'a.description ';
+            $sort_key = 'a.ip ';
+        }else if(4 == $sort_th){
+            $sort_key = 'a.date ';
         }else{
             $sort_key = 'a.cid ';
         }
@@ -44,6 +46,7 @@ class CommentController extends BaseController {
         if('' != $search || NULL != $search)
         {
             $comment = $comment->where("a.comment like '%{$search}%' ");
+            $comment = $comment->where("b.title like '%{$search}%' ");
         }
         $comment = $comment->select();
 
@@ -65,8 +68,11 @@ class CommentController extends BaseController {
     public function commentEdit()
     {
         $cid = I('cid');
-        $comment = M('Comment');
-        $comment = $comment->find($cid);
+        $comment = M('Comment')
+                    ->alias('a')
+                    ->field('a.cid, a.comment, a.poster, b.title as blogname, a.ip, FROM_UNIXTIME(a.date, "%Y-%m-%d %H:%i:%S") as date')
+                    ->join('LEFT JOIN __BLOG__ b ON a.gid = b.gid')
+                    ->find($cid);
         $this->assign('comment', $comment);
         $this->assign('cid', $cid);
         $this->display('edit');
@@ -78,11 +84,10 @@ class CommentController extends BaseController {
     public function commentEditSave()
     {
         $cid = I('cid');
-        $data['sortname'] = I('sortname');
-        $data['alias'] = I('alias');
-        $data['taxis'] = I('taxis');
-        $data['pid'] = I('pid');
-        $data['description'] = I('description');
+        $data['comment'] = I('comment');
+        $data['poster'] = I('poster');
+        $data['ip'] = I('ip');
+        $data['date'] = strtotime(I('date'));
 
         $sort = M('Comment');
         $flag = $sort->where('cid='.$cid)->save($data);
@@ -92,12 +97,12 @@ class CommentController extends BaseController {
         }
         else
         {
-            $this->ajaxReturn(array('result' => 'false', 'msg' => '类别修改失败！'));
+            $this->ajaxReturn(array('result' => 'false', 'msg' => '评论修改失败！'));
         }
     }
 
     /*
-        删除类别
+        删除评论
     */
     public function commentDel()
     {
