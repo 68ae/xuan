@@ -38,7 +38,7 @@
     <!-- Logo -->
     <a href="/adc" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>W</b>CX</span>
+      <span class="logo-mini"><b>C</b>X</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Cheng</b>X</span>
     </a>
@@ -86,7 +86,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="搜索...">
               <span class="input-group-btn">
@@ -94,7 +94,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
@@ -128,6 +128,25 @@
           <ul class="treeview-menu">
             <li><a href="/adc/sort/sortadd"><i class="fa fa-circle-o"></i> 新增类别</a></li>
             <li><a href="/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="/adc/comment/commentlist">
+            <i class="fa fa-comments-o"></i>
+            <span>评论</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cog"></i>
+            <span>系统</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/adc/set/basicset"><i class="fa fa-circle-o"></i> 基本设置</a></li>
+            <li><a href="/adc/set/personalset"><i class="fa fa-circle-o"></i> 个人设置</a></li>
           </ul>
         </li>
       </ul>
@@ -266,6 +285,7 @@
           data: {gid:gid},
           success : function(data) {
               if(data.result == 'success') {
+                  layer.closeAll();
                   dataTablesnews.draw( false );
               }
               else {
