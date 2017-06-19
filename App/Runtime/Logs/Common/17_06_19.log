@@ -6892,3 +6892,39 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
 ERR: 无法加载模块:Public
 
+[ 2017-06-19T22:59:08+08:00 ] 127.0.0.1 /Public/http/css/material.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /Public/http/fonts/Material-Design-Icons.woff?3ocs8m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /Public/http/css/material.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /Public/http/fonts/Material-Design-Icons.ttf?3ocs8m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /Public/http/js/material.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /Public/http/js/ripples.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+ERR: 无法加载模块:Public
+

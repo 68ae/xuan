@@ -130,7 +130,7 @@ class Page{
                 }
             }else{
                 if($page > 0 && $this->totalPages != 1){
-                    $link_page .= '<li><a class="current">' . $page . '</a></li>';
+                    $link_page .= '<li class="current"><a>' . $page . '</a></li>';
                 }
             }
         }

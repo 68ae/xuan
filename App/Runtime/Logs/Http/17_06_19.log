@@ -8373,3 +8373,28 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000370s ]
 
+[ 2017-06-19T22:59:43+08:00 ] 127.0.0.1 /index.php/Http/Index/index/p/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\xuan\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `emlog_blog` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM emlog_blog a LEFT JOIN emlog_user b ON a.author = b.uid LEFT JOIN emlog_sort c ON a.sortid = c.sid  LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT a.gid,a.title,a.content,a.excerpt,FROM_UNIXTIME(a.date,"%Y-%m-%d %H:%i:%S") as date,a.type,a.comnum,a.views,a.top,b.nickname,c.sortname FROM emlog_blog a LEFT JOIN emlog_user b ON a.author = b.uid LEFT JOIN emlog_sort c ON a.sortid = c.sid  ORDER BY top desc, date desc LIMIT 40,10   [ RunTime:0.0048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.003200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
