@@ -66,22 +66,25 @@
               <span>时间：<?php echo ($blog['date']); ?> | </span>
               <span>分类：<a href="http://chengxuan.wang/"><?php echo ($blog['sortname']); ?></a> | </span>
               <span>评论：<a href="http://chengxuan.wang/"><?php echo ($blog['comnum']); ?> 评论</a> </span>
+              <?php if('y' == $blog['top']){?>
+              <code>置顶</code>
+              <?php }?>
             </div>
             <div class="post-content">
               <p>
-                <?php echo htmlspecialchars_decode($blog['content']);?>
+                <?php if('' == $blog['excerpt']){echo $blog['content'];}else{echo $blog['excerpt'];}?>
               </p>
+              <p><a href="" class="btn btn-info">继续阅读 »</a></p>
             </div>
           </div>
         </div><?php endforeach; endif; ?>
-
           <ol class="page-navigator">
-            <li class="current"><a href="http://chengxuan.wang/">1</a></li>
-            <li><a href="http://chengxuan.wang/page/2/">2</a></li>
+            <?php echo ($page); ?>
+            <!-- <li><a href="http://chengxuan.wang/page/2/">2</a></li>
             <li><a href="http://chengxuan.wang/page/3/">3</a></li>
             <li><a href="http://chengxuan.wang/page/4/">4</a></li>
-            <li><span>...</span></li><li><a href="http://chengxuan.wang/page/7/">7</a></li>
-            <li class="next"><a href="http://chengxuan.wang/page/2/">下一页 &gt;&gt;</a></li>
+            <li><a href="http://chengxuan.wang/page/7/">7</a></li>
+            <li class="next"><a href="http://chengxuan.wang/page/2/">下一页 &gt;&gt;</a></li> -->
           </ol>
       </div>
 
