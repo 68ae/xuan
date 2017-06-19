@@ -65,9 +65,10 @@
               <span>作者：<a href="http://chengxuan.wang/"><?php echo ($blog['nickname']); ?></a> | </span>
               <span>时间：<?php echo ($blog['date']); ?> | </span>
               <span>分类：<a href="http://chengxuan.wang/"><?php echo ($blog['sortname']); ?></a> | </span>
-              <span>评论：<a href="http://chengxuan.wang/"><?php echo ($blog['comnum']); ?> 评论</a> </span>
+              <span>评论：<a href="http://chengxuan.wang/"><?php echo ($blog['comnum']); ?> 评论</a> | </span>
+              <span>浏览：<?php echo ($blog['views']); ?> </span>
               <?php if('y' == $blog['top']){?>
-              <code>置顶</code>
+                | <code>置顶</code>
               <?php }?>
             </div>
             <div class="post-content">
