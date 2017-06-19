@@ -1,0 +1,18 @@
+[ 2017-06-13T16:24:05+08:00 ] 127.0.0.1 /nativechannel/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:1.463083s ]
+ERR: 无法加载模块:Nativechannel
+
+[ 2017-06-13T17:31:04+08:00 ] 127.0.0.1 /1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:1B74BD89-2A22-4B93-B451-1C9E1052A0EC
+
+[ 2017-06-13T17:31:26+08:00 ] 127.0.0.1 /1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:1B74BD89-2A22-4B93-B451-1C9E1052A0EC
+

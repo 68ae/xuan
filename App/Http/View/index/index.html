@@ -4,8 +4,8 @@
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>程选网,首页</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="程选网,程选工作室,软件开发,网站开发,自助建站,企业建站,免费建站,程选个人网站,程选个人网站,博客,学习,网站建设">
+  <meta name="keywords" content="程选网,程选工作室,软件开发,网站开发,自助建站,企业建站,免费建站,程选个人网站,程选个人网站,程选官方网站">
   <meta name="generator" content="ChengX 1.0">
   <meta name="template" content="chengx_theme">
   <link href="/favicon.ico" rel="shortcut icon">
@@ -57,52 +57,38 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
+      <!-- 列表循环 -->
+      <foreach name="blogs" item="blog" key="k" >
         <div class="panel panel-default">
           <div class="panel-body">
-            <h3 class="post-title"><a href="http://chengxuan/">江湖</a></h3>
+            <h3 class="post-title"><a href="http://chengxuan.wang/">{$blog['title']}</a></h3>
             <div class="post-meta">
-              <span>作者：<a href="http://chengxuan/">ChengX</a> | </span>
-              <span>时间：2017-05-30 | </span>
-              <span>分类：<a href="http://chengxuan/">长生汤</a> | </span>
-              <span>评论：<a href="http://chengxuan/">6 评论</a> </span>
+              <span>作者：<a href="http://chengxuan.wang/">{$blog['nickname']}</a> | </span>
+              <span>时间：{$blog['date']} | </span>
+              <span>分类：<a href="http://chengxuan.wang/">{$blog['sortname']}</a> | </span>
+              <span>评论：<a href="http://chengxuan.wang/">{$blog['comnum']} 评论</a> </span>
             </div>
             <div class="post-content">
               <p>
-                有个很远很远的地方，那里的山云雾缭绕，那里的水波光盈盈，那里的将士持三尺剑，立不世功，那里的侠客十步杀一人，千里不留行，那里的姑娘美得万人空巷，笑起来脸颊红红。那里有快马厮杀的豪气，也有一剑斩六合的孤胆英雄。
+                <?php echo htmlspecialchars_decode($blog['content']);?>
               </p>
             </div>
           </div>
         </div>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h3 class="post-title"><a href="http://chengxuan/">江湖</a></h3>
-            <div class="post-meta">
-              <span>作者：<a href="http://chengxuan/">ChengX</a> | </span>
-              <span>时间：2017-05-30 | </span>
-              <span>分类：<a href="http://chengxuan/">长生汤</a> | </span>
-              <span>评论：<a href="http://chengxuan/">6 评论</a> </span>
-            </div>
-            <div class="post-content">
-              <p>
-                有个很远很远的地方，那里的山云雾缭绕，那里的水波光盈盈，那里的将士持三尺剑，立不世功，那里的侠客十步杀一人，千里不留行，那里的姑娘美得万人空巷，笑起来脸颊红红。那里有快马厮杀的豪气，也有一剑斩六合的孤胆英雄。
-              </p>
-            </div>
-          </div>
-        </div>
+        </foreach>
 
           <ol class="page-navigator">
-            <li class="current"><a href="http://chengxuan/">1</a></li>
-            <li><a href="http://chengxuan/page/2/">2</a></li>
-            <li><a href="http://chengxuan/page/3/">3</a></li>
-            <li><a href="http://chengxuan/page/4/">4</a></li>
-            <li><span>...</span></li><li><a href="http://chengxuan/page/7/">7</a></li>
-            <li class="next"><a href="http://chengxuan/page/2/">下一页 &gt;&gt;</a></li>
+            <li class="current"><a href="http://chengxuan.wang/">1</a></li>
+            <li><a href="http://chengxuan.wang/page/2/">2</a></li>
+            <li><a href="http://chengxuan.wang/page/3/">3</a></li>
+            <li><a href="http://chengxuan.wang/page/4/">4</a></li>
+            <li><span>...</span></li><li><a href="http://chengxuan.wang/page/7/">7</a></li>
+            <li class="next"><a href="http://chengxuan.wang/page/2/">下一页 &gt;&gt;</a></li>
           </ol>
       </div>
 
       <div class="col-md-3">
-  <form method="post" action="http://chengxuan" class="panel-body">
+  <form method="post" action="http://chengxuan.wang" class="panel-body">
     <div class="input-group">
       <div class="form-control-wrapper">
         <div class="form-control-wrapper"><input type="text" name="s" class="form-control empty" size="32"><div class="floating-label">搜索</div><span class="material-input"></span></div>
@@ -118,7 +104,7 @@
           <h3 class="panel-title">最新文章</h3>
       </a>
       <div class="recent_posts_box">
-         <a href="http://chengxuan/archives/168/" class="item">江湖</a>
+         <a href="http://chengxuan.wang/archives/168/" class="item">江湖</a>
       </div>
   </div>
 
