@@ -1,0 +1,46 @@
+<div class="col-md-3">
+  <form method="post" action="" class="panel-body">
+    <div class="input-group">
+      <div class="form-control-wrapper">
+        <div class="form-control-wrapper"><input type="text" name="s" class="form-control empty" size="32"><div class="floating-label">搜索</div><span class="material-input"></span></div>
+      </div>
+      <span class="input-group-btn">
+          <button class="btn btn-primary" value="" id="search-btn" type="submit"></button>
+      </span>
+    </div>
+  </form>
+
+  <div class="panel panel-info">
+      <a class="panel-heading" onclick="$('.recent_posts_box').slideToggle()" href="javascript:;">
+          <h3 class="panel-title">最新文章</h3>
+      </a>
+      <div class="recent_posts_box">
+          <foreach name="newBlogs" item="newBlog" key="k">
+          <a href="/blogs/gid/{$newBlog['gid']}" class="item">{$newBlog['title']}</a>
+          </foreach>
+      </div>
+  </div>
+
+  <div class="panel panel-info">
+      <a class="panel-heading" onclick="$('.comments_box').slideToggle()" href="javascript:;">
+          <h3 class="panel-title">最新回复</h3>
+      </a>
+      <div class="comments_box">
+          <foreach name="comments" item="comment" key="k">
+          <a href="/blogs/gid/{$comment['gid']}" class="item">{$comment['poster']}:{$comment['comment']}</a>
+          </foreach>
+      </div>
+  </div>
+  
+  <div class="panel panel-info">
+      <a class="panel-heading" onclick="$('.friend_link').slideToggle()" href="javascript:;">
+          <h3 class="panel-title">友情链接</h3>
+      </a>
+      <div class="friend_link">
+          <foreach name="links" item="link" key="k">
+          <a href="{$link['siteurl']}" class="item" title="{$link['description']}">{$link['sitename']}</a>
+          </foreach>
+      </div>
+  </div>
+
+</div>

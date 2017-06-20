@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/Public/http/css/customs.css">
 </head>
 <body>
-  <header>
+    <header>
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <!-- <div class="navbar-header">
@@ -41,7 +41,6 @@
       </div>
     </div>
   </header>
-
   <section class="billboard">
     <div class="container">
       <div class="row">
@@ -79,24 +78,16 @@
             </div>
           </div>
         </div><?php endforeach; endif; ?>
-          <ol class="page-navigator">
-            <?php echo ($page); ?>
-            <!-- <li><a href="http://chengxuan.wang/page/2/">2</a></li>
-            <li><a href="http://chengxuan.wang/page/3/">3</a></li>
-            <li><a href="http://chengxuan.wang/page/4/">4</a></li>
-            <li><a href="http://chengxuan.wang/page/7/">7</a></li>
-            <li class="next"><a href="http://chengxuan.wang/page/2/">下一页 &gt;&gt;</a></li> -->
-          </ol>
+          <ol class="page-navigator"><?php echo ($page); ?></ol>
       </div>
-
-      <div class="col-md-3">
-  <form method="post" action="http://chengxuan.wang" class="panel-body">
+        <div class="col-md-3">
+  <form method="post" action="" class="panel-body">
     <div class="input-group">
       <div class="form-control-wrapper">
         <div class="form-control-wrapper"><input type="text" name="s" class="form-control empty" size="32"><div class="floating-label">搜索</div><span class="material-input"></span></div>
       </div>
       <span class="input-group-btn">
-          <button class="btn btn-primary btn-fab btn-raised mdi-action-search" value="" id="search-btn" type="submit"></button>
+          <button class="btn btn-primary" value="" id="search-btn" type="submit"></button>
       </span>
     </div>
   </form>
@@ -106,33 +97,49 @@
           <h3 class="panel-title">最新文章</h3>
       </a>
       <div class="recent_posts_box">
-         <a href="http://chengxuan.wang/archives/168/" class="item">江湖</a>
+          <?php if(is_array($newBlogs)): foreach($newBlogs as $k=>$newBlog): ?><a href="/blogs/gid/<?php echo ($newBlog['gid']); ?>" class="item"><?php echo ($newBlog['title']); ?></a><?php endforeach; endif; ?>
+      </div>
+  </div>
+
+  <div class="panel panel-info">
+      <a class="panel-heading" onclick="$('.comments_box').slideToggle()" href="javascript:;">
+          <h3 class="panel-title">最新回复</h3>
+      </a>
+      <div class="comments_box">
+          <?php if(is_array($comments)): foreach($comments as $k=>$comment): ?><a href="/blogs/gid/<?php echo ($comment['gid']); ?>" class="item"><?php echo ($comment['poster']); ?>:<?php echo ($comment['comment']); ?></a><?php endforeach; endif; ?>
+      </div>
+  </div>
+  
+  <div class="panel panel-info">
+      <a class="panel-heading" onclick="$('.friend_link').slideToggle()" href="javascript:;">
+          <h3 class="panel-title">友情链接</h3>
+      </a>
+      <div class="friend_link">
+          <?php if(is_array($links)): foreach($links as $k=>$link): ?><a href="<?php echo ($link['siteurl']); ?>" class="item" title="<?php echo ($link['description']); ?>"><?php echo ($link['sitename']); ?></a><?php endforeach; endif; ?>
       </div>
   </div>
 
 </div>
-        </div>
+    </div>
   </div>
-  <footer>
+    <footer>
     <div class="footer-bottom">
       <div class="container">
         <div class="pull-left copyright">Copyright © 2017&nbsp;ChengX</div>
         <ul class="footer-nav pull-right">
           <li>Powered by <a href="#" rel="nofollow">ChengX</a></li>
           <!-- <li>Optimized by <a href="#">HanSon</a></li> -->
-
-                    <li><a href="#" rel="nofollow">备案号</a></li>
-          
-                  </ul>
+          <li><a href="#" rel="nofollow">备案号</a></li>
+        </ul>
       </div>
     </div>
   </footer>
-  <script src="/Public/http/js/jquery-2.1.4.min.js"></script>
-  <script src="/Public/http/js/bootstrap.min.js"></script>
-  <script src="/Public/http/js/material.min.js"></script>
   <script src="/Public/http/js/ripples.min.js"></script>
+  <script src="/Public/http/js/bootstrap.min.js"></script>
+  <script src="/Public/http/js/jquery-2.1.4.min.js"></script>
+  <script src="/Public/http/js/material.min.js"></script>
   <script src="/Public/http/js/jquery.scrollUp.min.js"></script>
-  <script type="text/javascript">
+    <script type="text/javascript">
   $.material.init();
   $.scrollUp({
   scrollImg: true,

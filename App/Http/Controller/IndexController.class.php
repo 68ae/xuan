@@ -1,9 +1,8 @@
 <?php
 namespace Http\Controller;
-// use Http\Controller\BaseController;
-use Think\Controller;
+use Http\Controller\BaseController;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
     public function index(){
         $Blog = M('Blog'); // 实例化User对象
         $count      = $Blog
@@ -24,6 +23,7 @@ class IndexController extends Controller {
                ->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('blogs',$blogs);// 赋值数据集
         $this->assign('page', $page);// 赋值分页输出
+
         $this->display(); // 输出模板
     }
 }
