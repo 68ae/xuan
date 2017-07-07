@@ -63,12 +63,12 @@
       <!-- 列表循环 -->
         <div class="panel panel-default">
           <div class="panel-body">
-            <h3 class="post-title"><a href=""><?php echo ($blog['title']); ?></a></h3>
+            <h3 class="post-title"><?php echo ($blog['title']); ?></h3>
             <div class="post-meta">
-              <span>作者：<a href="/"><?php echo ($blog['nickname']); ?></a> | </span>
+              <span>作者：<a href="/http/index?uid=<?php echo ($blog['uid']); ?>"><?php echo ($blog['nickname']); ?></a> | </span>
               <span>时间：<?php echo ($blog['date']); ?> | </span>
-              <span>分类：<a href="/"><?php echo ($blog['sortname']); ?></a> | </span>
-              <span>评论：<a href="/"><?php echo ($blog['comnum']); ?> 评论</a> | </span>
+              <span>分类：<a href="/http/index?sid=<?php echo ($blog['sid']); ?>"><?php echo ($blog['sortname']); ?></a> | </span>
+              <span>评论：<?php echo ($blog['comnum']); ?> 评论 | </span>
               <span>浏览：<?php echo ($blog['views']); ?> </span>
               <?php if('y' == $blog['top']){?>
                 | <code>置顶</code>
