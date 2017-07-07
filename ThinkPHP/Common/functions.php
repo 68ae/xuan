@@ -239,7 +239,7 @@ function T($template='',$layer=''){
     }
 
     // 获取主题
-    $theme  =   substr_count($file,'/')<2 ? C('DEFAULT_THEME') : '';
+    $theme  =   substr_count($file,'/') < 2 ? C('DEFAULT_THEME') : '';
 
     // 分析模板文件规则
     $depr   =   C('TMPL_FILE_DEPR');

@@ -1,12 +1,34 @@
+  <script src="/Public/http/js/jquery-2.1.4.min.js"></script>
+  <script src="/Public/http/js/ripples.min.js"></script>
+  <script src="/Public/http/js/bootstrap.min.js"></script>
+  <script src="/Public/http/js/material.min.js"></script>
+  <script src="/Public/http/js/jquery.scrollUp.min.js"></script>
+  <script src="/public/layer/layer.js"></script>
   <footer>
     <div class="footer-bottom">
       <div class="container">
         <div class="pull-left copyright">Copyright © 2017&nbsp;ChengX</div>
         <ul class="footer-nav pull-right">
-          <li>Powered by <a href="#" rel="nofollow">ChengX</a></li>
-          <!-- <li>Optimized by <a href="#">HanSon</a></li> -->
-          <li><a href="#" rel="nofollow">备案号</a></li>
+          <li>Powered by <a href="http://www.chengxuan.wang" rel="nofollow" target="new">ChengX</a></li>
+          <li><a href="http://www.miibeian.gov.cn" rel="nofollow" target="new">京ICP备14058139号-3</a></li>
+          <li><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254150279'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254150279%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></li>
+          <li><a href="javascript:void(0);" onclick="exemption()" id="exemption" title="我们尊重原创，本网站部分文章来源或改编自互联网或公众平台，主要目的在于分享信息，版权归原作者所有，如有侵犯您的权益或版权，请及时告知我们，我们及时删除。(联系方式：admin@68ae.com)">免责声明</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script type="text/javascript">
+  $.material.init();
+  $.scrollUp({
+  scrollImg: true,
+  scrollText: "回顶部"
+  });
+  $('#scrollUp').addClass('btn btn-info btn-fab btn-raised mdi-navigation-expand-less');
+
+  // 免责声明
+  function exemption()
+  {
+    layer.msg('我们尊重原创，本网站部分文章来源或改编自互联网或公众平台，主要目的在于分享信息，版权归原作者所有，如有侵犯您的权益或版权，请及时告知我们，我们及时删除。(联系方式：admin@68ae.com)');
+  }
+  </script>
+  <a id="scrollUp" href="#top" class="btn btn-info btn-fab btn-raised mdi-navigation-expand-less" style="display: none; position: fixed; z-index: 2147483647;"></a> 

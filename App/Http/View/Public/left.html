@@ -5,7 +5,7 @@
         <div class="form-control-wrapper"><input type="text" name="s" class="form-control empty" size="32"><div class="floating-label">搜索</div><span class="material-input"></span></div>
       </div>
       <span class="input-group-btn">
-          <button class="btn btn-primary" value="" id="search-btn" type="submit"></button>
+          <button class="btn btn-primary btn-fab btn-raised mdi-action-search" value="" id="search-btn" type="submit"></button>
       </span>
     </div>
   </form>
@@ -16,7 +16,7 @@
       </a>
       <div class="recent_posts_box">
           <foreach name="newBlogs" item="newBlog" key="k">
-          <a href="/blogs/gid/{$newBlog['gid']}" class="item">{$newBlog['title']}</a>
+          <a href="/http/page?gid={$newBlog['gid']}" class="item">{$newBlog['title']}</a>
           </foreach>
       </div>
   </div>
@@ -27,7 +27,7 @@
       </a>
       <div class="comments_box">
           <foreach name="comments" item="comment" key="k">
-          <a href="/blogs/gid/{$comment['gid']}" class="item">{$comment['poster']}:{$comment['comment']}</a>
+          <a href="/http/page?gid={$comment['gid']}" class="item">{$comment['poster']}:{$comment['comment']}</a>
           </foreach>
       </div>
   </div>

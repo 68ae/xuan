@@ -31,10 +31,9 @@
     <div class="row">
       <div class="col-md-9">
       <!-- 列表循环 -->
-      <foreach name="blogs" item="blog" key="k">
         <div class="panel panel-default">
           <div class="panel-body">
-            <h3 class="post-title"><a href="/http/page?gid={$blog['gid']}">{$blog['title']}</a></h3>
+            <h3 class="post-title"><a href="">{$blog['title']}</a></h3>
             <div class="post-meta">
               <span>作者：<a href="/">{$blog['nickname']}</a> | </span>
               <span>时间：{$blog['date']} | </span>
@@ -47,27 +46,15 @@
             </div>
             <div class="post-content">
               <p>
-                <?php if('' == $blog['excerpt']){echo $blog['content'];}else{echo $blog['excerpt'];}?>
+                {$blog['content']}
               </p>
-              <p><a href="/http/page?gid={$blog['gid']}" class="btn btn-info">继续阅读 »</a></p>
             </div>
           </div>
         </div>
-        </foreach>
-          <ol class="page-navigator">{$page}</ol>
       </div>
         <include file="Public/left"/>
     </div>
   </div>
   <include file="Public/foot"/>
 </body>
-<script type="text/javascript">
-    window.onblur = function() {
-        // 发呆- ( ゜- ゜)つロ 
-        document.title = "你瞅啥？( ͡° ͜ʖ ͡°)╯";
-    window.onfocus = function() {
-        document.title = "程选网，首页";
-     }
-    };
-</script>
 </html>

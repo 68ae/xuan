@@ -61,9 +61,9 @@
     <div class="row">
       <div class="col-md-9">
       <!-- 列表循环 -->
-      <?php if(is_array($blogs)): foreach($blogs as $k=>$blog): ?><div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-body">
-            <h3 class="post-title"><a href="/http/page?gid=<?php echo ($blog['gid']); ?>"><?php echo ($blog['title']); ?></a></h3>
+            <h3 class="post-title"><a href=""><?php echo ($blog['title']); ?></a></h3>
             <div class="post-meta">
               <span>作者：<a href="/"><?php echo ($blog['nickname']); ?></a> | </span>
               <span>时间：<?php echo ($blog['date']); ?> | </span>
@@ -76,13 +76,11 @@
             </div>
             <div class="post-content">
               <p>
-                <?php if('' == $blog['excerpt']){echo $blog['content'];}else{echo $blog['excerpt'];}?>
+                <?php echo ($blog['content']); ?>
               </p>
-              <p><a href="/http/page?gid=<?php echo ($blog['gid']); ?>" class="btn btn-info">继续阅读 »</a></p>
             </div>
           </div>
-        </div><?php endforeach; endif; ?>
-          <ol class="page-navigator"><?php echo ($page); ?></ol>
+        </div>
       </div>
         <div class="col-md-3">
   <form method="post" action="" class="panel-body">
@@ -161,13 +159,4 @@
   </script>
   <a id="scrollUp" href="#top" class="btn btn-info btn-fab btn-raised mdi-navigation-expand-less" style="display: none; position: fixed; z-index: 2147483647;"></a> 
 </body>
-<script type="text/javascript">
-    window.onblur = function() {
-        // 发呆- ( ゜- ゜)つロ 
-        document.title = "你瞅啥？( ͡° ͜ʖ ͡°)╯";
-    window.onfocus = function() {
-        document.title = "程选网，首页";
-     }
-    };
-</script>
 </html>
