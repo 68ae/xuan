@@ -35,9 +35,9 @@
           <div class="panel-body">
             <h3 class="post-title">{$blog['title']}</h3>
             <div class="post-meta">
-              <span>作者：<a href="/http/index?uid={$blog['uid']}">{$blog['nickname']}</a> | </span>
+              <span>作者：<a href="/index.php/http/index?uid={$blog['uid']}">{$blog['nickname']}</a> | </span>
               <span>时间：{$blog['date']} | </span>
-              <span>分类：<a href="/http/index?sid={$blog['sid']}">{$blog['sortname']}</a> | </span>
+              <span>分类：<a href="/index.php/http/index?sid={$blog['sid']}">{$blog['sortname']}</a> | </span>
               <span>评论：{$blog['comnum']} 评论 | </span>
               <span>浏览：{$blog['views']} </span>
               <?php if('y' == $blog['top']){?>

@@ -37,7 +37,7 @@ class IndexController extends BaseController {
                 ->join('LEFT JOIN __USER__ b ON a.author = b.uid')
                 ->join('LEFT JOIN __SORT__ c ON a.sortid = c.sid')
                 ->where($where)
-                ->order('a.top desc, date desc')
+                ->order('a.top desc, a.date desc')
                 ->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('blogs',$blogs);// 赋值数据集
         $this->assign('page', $page);// 赋值分页输出

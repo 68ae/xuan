@@ -1,8 +1,8 @@
-<include file='./App/Adc/View/top.html'/>
+<include file='Public/top'/>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
   <!-- Left side column. contains the logo and sidebar -->
-<include file='./App/Adc/View/left.html'/>
+<include file='Public/left'/>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -74,7 +74,7 @@
     </section>
   </div>
   <!-- /.content-wrapper -->
-  <include file='./App/Adc/View/foot.html'/>
+  <include file='Public/foot'/>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -82,17 +82,17 @@
 </div>
 <!-- ./wrapper -->
 <!-- Bootstrap 3.3.6 -->
-<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Public/adc/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="/public/adc/plugins/fastclick/fastclick.js"></script>
+<script src="/Public/adc/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="/public/adc/dist/js/app.min.js"></script>
+<script src="/Public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
-<script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/Public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- 验证 -->
-<script type="text/javascript" src="/public/adc/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/public/adc/validate/messages_zh.js"></script>
-<script src="/public/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/adc/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/Public/adc/validate/messages_zh.js"></script>
+<script src="/Public/layer/layer.js"></script>
 
 <script type="text/javascript">
     //验证
@@ -107,13 +107,13 @@
             submitHandler: function(form) {
                 var param = $("#form_add_sort").serialize();
                 $.ajax({
-                    url : "/adc/sort/sortEditSave",
+                    url : "/index.php/adc/sort/sortEditSave",
                     type : "post",
                     dataType : "json",
                     data: param,
                     success : function(data) {
                         if(data.result == 'success') {
-                            location.href='/adc/sort/sortlist';
+                            location.href='/index.php/adc/sort/sortlist';
                         }
                         else {
                             layer.msg(data.msg);

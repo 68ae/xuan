@@ -1,9 +1,9 @@
-<include file='./App/Adc/View/top.html'/>
+<include file='Public/top'/>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
   <!-- Left side column. contains the logo and sidebar -->
-<include file='./App/Adc/View/left.html'/>
-<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
+<include file='Public/left'/>
+<link rel="stylesheet" href="/Public/adc/plugins/datatables/dataTables.bootstrap.css">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -43,7 +43,7 @@
     </section>
   </div>
   <!-- /.content-wrapper -->
-  <include file='./App/Adc/View/foot.html'/>
+  <include file='Public/foot'/>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -51,24 +51,24 @@
 </div>
 <!-- ./wrapper -->
 <!-- Bootstrap 3.3.6 -->
-<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Public/adc/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="/public/adc/plugins/fastclick/fastclick.js"></script>
+<script src="/Public/adc/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="/public/adc/dist/js/app.min.js"></script>
+<script src="/Public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
-<script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/Public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- DataTables -->
-<script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="/public/layer/layer.js"></script>
+<script src="/Public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/Public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/Public/layer/layer.js"></script>
 <script type="text/javascript">
   var table_comment = $('#example').DataTable({
       language: {
-          url: '/public/adc/plugins/datatables/Chinese.json'
+          url: '/Public/adc/plugins/datatables/Chinese.json'
       },
       serverSide: true, // 是否开启服务器模式
-      sAjaxSource:'/adc/comment/getCommentList',
+      sAjaxSource:'/index.php/adc/comment/getCommentList',
       paging: true,  //是否开启本地分页
       lengthChange: true, // 是否允许用户改变表格每页显示的记录数
       searching: true, //是否允许Datatables开启本地搜索
@@ -106,7 +106,7 @@
   // 编辑
   function edit(cid)
   {
-    location.href='/adc/comment/commentedit?cid=' + cid;
+    location.href='/index.php/adc/comment/commentedit?cid=' + cid;
   }
 
   // 删除
@@ -116,7 +116,7 @@
         btn: ['确定','取消'] //按钮
     }, function(){
       $.ajax({
-          url : "/adc/comment/commentDel",
+          url : "/index.php/adc/comment/commentDel",
           type : "post",
           dataType : "json",
           data: {cid:cid},

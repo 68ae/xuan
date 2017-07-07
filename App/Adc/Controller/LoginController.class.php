@@ -29,7 +29,7 @@ class LoginController extends Controller {
                 $adcpassword = $userInfo[password];
                 // 加密
                 // echo password_hash('111111', PASSWORD_BCRYPT);
-                $check = password_verify($password, $adcpassword);
+                $check = \password_verify($password, $adcpassword);
                 if (!$check)
                 {
                     $this->ajaxReturn(array('status' => 'failed', 'reason' => '密码不正确！'));

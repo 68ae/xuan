@@ -86,8 +86,8 @@ class NewsController extends BaseController {
         $data['date'] = strtotime(I('date'));
         $data['excerpt'] = I('excerpt');
         $data['password'] = I('password');
-        $data['top'] = I('top');
-        $data['sortop'] = I('sortop');
+        $data['top'] = I('top', 'n');
+        $data['sortop'] = I('sortop', 'n');
         $data['allow_remark'] = I('allow_remark');
         $data['type'] = 'bolg';
         $data['author'] = session('userInfo.uid');

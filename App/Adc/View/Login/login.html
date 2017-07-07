@@ -1,4 +1,4 @@
-<include file='./App/Adc/View/top.html'/>
+<include file='Public/top'/>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
@@ -31,9 +31,9 @@
 </div>
 <!-- /.login-box -->
 
-<script src="/public/layer/layer.js"></script>
+<script src="/Public/layer/layer.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Public/adc/bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
 
@@ -65,7 +65,7 @@
             var param = {username:username, password:password};
             $.ajax({
                 type:'POST',
-                url:'/adc/login/checkLogin',
+                url:'/index.php/adc/login/checkLogin',
                 data:param,
                 dataType:'json',
                 success:function(data){
@@ -80,7 +80,7 @@
                     else
                     {
                         //成功
-                        window.location.href='/adc/index/index';
+                        window.location.href='/index.php/adc/index/index';
                     }
                 }
             });
