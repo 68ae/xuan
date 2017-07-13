@@ -28,7 +28,6 @@ class LoginController extends Controller {
                 $adcname     = $userInfo[username];
                 $adcpassword = $userInfo[password];
                 // 加密
-                // echo password_hash('111111', PASSWORD_BCRYPT);
                 $check = \password_verify($password, $adcpassword);
                 if (!$check)
                 {

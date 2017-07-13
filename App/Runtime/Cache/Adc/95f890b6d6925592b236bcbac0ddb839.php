@@ -7,22 +7,22 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="/public/adc/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Public/adc/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="/Public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/public/adc/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/Public/adc/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="/public/adc/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="/Public/adc/dist/css/skins/_all-skins.min.css">
   <!-- ico -->
   <link href="/favicon.ico" rel="shortcut icon">
   <!-- jQuery 2.2.3 -->
-  <script src="/public/adc/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="/Public/adc/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -62,9 +62,9 @@
 </div>
 <!-- /.login-box -->
 
-<script src="/public/layer/layer.js"></script>
+<script src="/Public/layer/layer.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Public/adc/bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
 
@@ -96,7 +96,7 @@
             var param = {username:username, password:password};
             $.ajax({
                 type:'POST',
-                url:'/adc/login/checkLogin',
+                url:'/index.php/adc/login/checkLogin',
                 data:param,
                 dataType:'json',
                 success:function(data){
@@ -111,7 +111,7 @@
                     else
                     {
                         //成功
-                        window.location.href='/adc/index/index';
+                        window.location.href='/index.php/adc/index/index';
                     }
                 }
             });

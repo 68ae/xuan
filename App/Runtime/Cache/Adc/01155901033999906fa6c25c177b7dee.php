@@ -7,22 +7,22 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="/public/adc/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Public/adc/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="/public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="/Public/adc/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/public/adc/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/Public/adc/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="/public/adc/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="/Public/adc/dist/css/skins/_all-skins.min.css">
   <!-- ico -->
   <link href="/favicon.ico" rel="shortcut icon">
   <!-- jQuery 2.2.3 -->
-  <script src="/public/adc/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="/Public/adc/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -55,13 +55,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/public/adc/dist/img/user.jpg" class="user-image" alt="User Image">
+              <img src="/Public/adc/dist/img/user.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo ($_SESSION['userInfo']['nickname']); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/public/adc/dist/img/user.jpg" class="img-circle" alt="User Image">
+                <img src="/Public/adc/dist/img/user.jpg" class="img-circle" alt="User Image">
                 <p>
                   <?php echo ($_SESSION['userInfo']['nickname']); ?> - 管理员
                   <small>注册时间<?php echo ($_SESSION['userInfo']['created_time']); ?></small>
@@ -72,7 +72,7 @@
                   <a href="#" class="btn btn-default btn-flat">设置</a>
                 </div>
                 <div class="pull-right">
-                  <a href="/adc/login" class="btn btn-default btn-flat">退出</a>
+                  <a href="/index.php/adc/login" class="btn btn-default btn-flat">退出</a>
                 </div>
               </li>
             </ul>
@@ -113,8 +113,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adc/news/newsadd"><i class="fa fa-circle-o"></i> 新增文章</a></li>
-            <li><a href="/adc/news/newslist"><i class="fa fa-circle-o"></i> 文章列表</a></li>
+            <li><a href="/index.php/adc/news/newsadd"><i class="fa fa-circle-o"></i> 新增文章</a></li>
+            <li><a href="/index.php/adc/news/newslist"><i class="fa fa-circle-o"></i> 文章列表</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -126,12 +126,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adc/sort/sortadd"><i class="fa fa-circle-o"></i> 新增类别</a></li>
-            <li><a href="/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
+            <li><a href="/index.php/adc/sort/sortadd"><i class="fa fa-circle-o"></i> 新增类别</a></li>
+            <li><a href="/index.php/adc/sort/sortlist"><i class="fa fa-circle-o"></i> 类别列表</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="/adc/comment/commentlist">
+          <a href="/index.php/adc/comment/commentlist">
             <i class="fa fa-comments-o"></i>
             <span>评论</span>
           </a>
@@ -145,8 +145,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adc/set/basicset"><i class="fa fa-circle-o"></i> 基本设置</a></li>
-            <li><a href="/adc/set/personalset"><i class="fa fa-circle-o"></i> 个人设置</a></li>
+            <li><a href="/index.php/adc/set/basicset"><i class="fa fa-circle-o"></i> 基本设置</a></li>
+            <li><a href="/index.php/adc/set/personalset"><i class="fa fa-circle-o"></i> 个人设置</a></li>
           </ul>
         </li>
       </ul>
@@ -167,7 +167,7 @@
       });
     });
   </script>
-<link rel="stylesheet" href="/public/adc/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/Public/adc/plugins/datatables/dataTables.bootstrap.css">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -223,24 +223,24 @@
 </div>
 <!-- ./wrapper -->
 <!-- Bootstrap 3.3.6 -->
-<script src="/public/adc/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Public/adc/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="/public/adc/plugins/fastclick/fastclick.js"></script>
+<script src="/Public/adc/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="/public/adc/dist/js/app.min.js"></script>
+<script src="/Public/adc/dist/js/app.min.js"></script>
 <!-- SlimScroll 1.3.0 -->
-<script src="/public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="/Public/adc/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- DataTables -->
-<script src="/public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="/public/layer/layer.js"></script>
+<script src="/Public/adc/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/Public/adc/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/Public/layer/layer.js"></script>
 <script type="text/javascript">
   var dataTablesnews = $('#example2').DataTable({
       language: {
-          url: '/public/adc/plugins/datatables/Chinese.json'
+          url: '/Public/adc/plugins/datatables/Chinese.json'
       },
       serverSide: true, // 是否开启服务器模式
-      sAjaxSource:'/adc/news/getNewsList',
+      sAjaxSource:'/index.php/adc/news/getNewsList',
       paging: true,  //是否开启本地分页
       lengthChange: true, // 是否允许用户改变表格每页显示的记录数
       searching: true, //是否允许Datatables开启本地搜索
@@ -269,7 +269,7 @@
   // 编辑
   function edit(gid)
   {
-    location.href='/adc/news/newsedit?gid=' + gid;
+    location.href='/index.php/adc/news/newsedit?gid=' + gid;
   }
 
   // 删除
@@ -279,7 +279,7 @@
         btn: ['确定','取消'] //按钮
     }, function(){
       $.ajax({
-          url : "/adc/news/newsDel",
+          url : "/index.php/adc/news/newsDel",
           type : "post",
           dataType : "json",
           data: {gid:gid},

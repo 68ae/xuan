@@ -29,13 +29,13 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/"> ChengX 的博客</a></li>
-            <li><a href="/http/index?sid=8" title="女人哪些事">女人哪些事</a></li>
-            <li><a href="/http/index?sid=15" title="天天爱美食">天天爱美食</a></li>
-            <li><a href="/http/index?sid=11" title="长生汤">长生汤</a></li>
-            <li><a href="/http/index?sid=9" title="长生汤">教育&文学</a></li>
-            <li><a href="/http/index?sid=14" title="长生汤">数据库相关</a></li>
-            <li><a href="/http/index?sid=16" title="长生汤">JAVA学习</a></li>
-            <li><a href="/http/index?sid=12" title="长生汤">轻松一刻</a></li>
+            <li><a href="/index.php/http/index?sid=8" title="女人哪些事">女人哪些事</a></li>
+            <li><a href="/index.php/http/index?sid=15" title="天天爱美食">天天爱美食</a></li>
+            <li><a href="/index.php/http/index?sid=11" title="长生汤">长生汤</a></li>
+            <li><a href="/index.php/http/index?sid=9" title="长生汤">教育&文学</a></li>
+            <li><a href="/index.php/http/index?sid=14" title="长生汤">数据库相关</a></li>
+            <li><a href="/index.php/http/index?sid=16" title="长生汤">JAVA学习</a></li>
+            <li><a href="/index.php/http/index?sid=12" title="长生汤">轻松一刻</a></li>
             <!-- <li><a href="#" title="留言板">留言板</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -63,12 +63,12 @@
       <!-- 列表循环 -->
       <?php if(is_array($blogs)): foreach($blogs as $k=>$blog): ?><div class="panel panel-default">
           <div class="panel-body">
-            <h3 class="post-title"><a href="/http/page?gid=<?php echo ($blog['gid']); ?>"><?php echo ($blog['title']); ?></a></h3>
+            <h3 class="post-title"><a href="/index.php/http/page?gid=<?php echo ($blog['gid']); ?>"><?php echo ($blog['title']); ?></a></h3>
             <div class="post-meta">
-              <span>作者：<a href="/http/index?uid=<?php echo ($blog['uid']); ?>"><?php echo ($blog['nickname']); ?></a> | </span>
+              <span>作者：<a href="/index.php/http/index?uid=<?php echo ($blog['uid']); ?>"><?php echo ($blog['nickname']); ?></a> | </span>
               <span>时间：<?php echo ($blog['date']); ?> | </span>
-              <span>分类：<a href="/http/index?sid=<?php echo ($blog['sid']); ?>"><?php echo ($blog['sortname']); ?></a> | </span>
-              <span>评论：<a href="/http/page?gid=<?php echo ($blog['gid']); ?>"><?php echo ($blog['comnum']); ?> 评论</a> | </span>
+              <span>分类：<a href="/index.php/http/index?sid=<?php echo ($blog['sid']); ?>"><?php echo ($blog['sortname']); ?></a> | </span>
+              <span>评论：<a href="/index.php/http/page?gid=<?php echo ($blog['gid']); ?>"><?php echo ($blog['comnum']); ?> 评论</a> | </span>
               <span>浏览：<?php echo ($blog['views']); ?> </span>
               <?php if('y' == $blog['top']){?>
                 | <code>置顶</code>
@@ -78,7 +78,7 @@
               <p>
                 <?php if('' == $blog['excerpt']){echo $blog['content'];}else{echo $blog['excerpt'];}?>
               </p>
-              <p><a href="/http/page?gid=<?php echo ($blog['gid']); ?>" class="btn btn-info">继续阅读 »</a></p>
+              <p><a href="/index.php/http/page?gid=<?php echo ($blog['gid']); ?>" class="btn btn-info">继续阅读 »</a></p>
             </div>
           </div>
         </div><?php endforeach; endif; ?>
@@ -101,7 +101,7 @@
           <h3 class="panel-title">最新文章</h3>
       </a>
       <div class="recent_posts_box">
-          <?php if(is_array($newBlogs)): foreach($newBlogs as $k=>$newBlog): ?><a href="/http/page?gid=<?php echo ($newBlog['gid']); ?>" class="item"><?php echo ($newBlog['title']); ?></a><?php endforeach; endif; ?>
+          <?php if(is_array($newBlogs)): foreach($newBlogs as $k=>$newBlog): ?><a href="/index.php/http/page?gid=<?php echo ($newBlog['gid']); ?>" class="item"><?php echo ($newBlog['title']); ?></a><?php endforeach; endif; ?>
       </div>
   </div>
 
@@ -110,7 +110,7 @@
           <h3 class="panel-title">最新回复</h3>
       </a>
       <div class="comments_box">
-          <?php if(is_array($comments)): foreach($comments as $k=>$comment): ?><a href="/http/page?gid=<?php echo ($comment['gid']); ?>" class="item"><?php echo ($comment['poster']); ?>:<?php echo ($comment['comment']); ?></a><?php endforeach; endif; ?>
+          <?php if(is_array($comments)): foreach($comments as $k=>$comment): ?><a href="/index.php/http/page?gid=<?php echo ($comment['gid']); ?>" class="item"><?php echo ($comment['poster']); ?>:<?php echo ($comment['comment']); ?></a><?php endforeach; endif; ?>
       </div>
   </div>
   
@@ -131,7 +131,7 @@
   <script src="/Public/http/js/bootstrap.min.js"></script>
   <script src="/Public/http/js/material.min.js"></script>
   <script src="/Public/http/js/jquery.scrollUp.min.js"></script>
-  <script src="/public/layer/layer.js"></script>
+  <script src="/Public/layer/layer.js"></script>
   <footer>
     <div class="footer-bottom">
       <div class="container">
